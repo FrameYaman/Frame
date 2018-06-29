@@ -275,7 +275,7 @@ public class BaseDSL {
 	        /// Encontra campo Combo por Id e retira a seleção do elemento deste Combo.
 	        /// Exemplo: 'DeselecionarCombo("Id" , "TextoDoCombo")'
 	        /// </summary>
-	        /// <param name="id"></param>
+	        
 	        /// <param name="valor"></param>
 	        public void DeselecionarCombo(string id, string valor)
 	        {
