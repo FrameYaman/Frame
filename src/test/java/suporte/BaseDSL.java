@@ -8,6 +8,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import junit.framework.Assert;
+
 public class BaseDSL {
 	 
 	WebDriver driver = new ChromeDriver();
@@ -183,77 +185,39 @@ public class BaseDSL {
 	            Assert.AreEqual(texto, ObterTexto(by));
 	        }
 	        /********* Radio e Check ************/
-
-	        /// <summary>
-	        /// Encontra elemento Rádio pela indicação solicitada e clica.
-	        /// É necessário indicar a TAG referente. Exemplo: 'ClicarRadio(By.Id("Id"))'
-	        /// </summary>
-	        /// <param name="by"></param>
-	        public void ClicarRadio(By by)
+	        
+	        
+	        /**
+	         * Encontra elemento pela indicação solicitada e clica.
+	         * @param by (utilizado para indicar a Tag)
+	         * É necessário indicar a TAG referente. Exemplo: 'findElement(By.Id("Id"))'
+	         * @author guilherme.teixeira
+	         */
+	        public void common(By by)
 	        {
-	            GetDriver().FindElement(by).Click();
+	            driver.findElement(by).click();
 	        }
 
-	        /// <summary>
-	        /// Encontra elemento Rádio por Id e clica.
-	        /// Exemplo: 'ClicarRadioId(By.Id("Id"))' 
-	        /// </summary>
-	        /// <param name="id"></param>
-	        public void ClicarRadioId(string id)
+	        /**
+	         * Encontra elemento e confirma se está selecionado.
+	         * @author guilherme.teixeira
+	         * @param by (utilizado para indicar a Tag)
+	         * @return Boolean
+	         */
+	        
+	        public Boolean IsElementoMarcado(By by)
 	        {
-	            GetDriver().FindElement(By.Id(id)).Click();
+	            return driver.findElement(by).isSelected();
 	        }
 
-	        /// <summary>
-	        /// Encontra elemento por XPath e clica.
-	        /// Exemplo: 'ClicarElementoXpath("//*[@href = '#XPtah']")'
-	        /// </summary>
-	        /// <param name="xpath"></param>
-	        public void ClicarElementoXpath(string xpath)
+	        /**
+	         * Encontra campo Check, seleciona pressionando Espaço para marcar.
+	         * @param by (utilizado para indicar a Tag)
+	         * @author guilherme.teixeira
+	         */
+	        public void IsCheckMarcadoComEspaco(By by)
 	        {
-	            GetDriver().FindElement(By.XPath(xpath)).Click();
-	        }
-
-	        /// <summary>
-	        /// Encontra elemento Rádio por Id e confirma se está selecionado.
-	        /// Exemplo: 'IsRadioMarcado("Id")'
-	        /// </summary>
-	        /// <param name="id"></param>
-	        /// <returns></returns>
-	        public bool IsRadioMarcado(string id)
-	        {
-	            return GetDriver().FindElement(By.Id(id)).Selected;
-	        }
-
-	        /// <summary>
-	        /// Encontra elemento Check por Id e clica.
-	        /// Exemplo: 'ClicarCheckId("Id")'
-	        /// </summary>
-	        /// <param name="id"></param>
-	        public void ClicarCheckId(string id)
-	        {
-	            GetDriver().FindElement(By.Id(id)).Click();
-	        }
-
-	        /// <summary>
-	        /// Encontra elemento Check por Id e confirma se está selecionado.
-	        /// Exemplo: 'IsCheckMarcado("Id")'
-	        /// </summary>
-	        /// <param name="id"></param>
-	        /// <returns></returns>
-	        public bool IsCheckMarcado(string id)
-	        {
-	            return GetDriver().FindElement(By.Id(id)).Selected;
-	        }
-
-	        /// <summary>
-	        /// Encontra campo Check por Id, seleciona pressionando Espaço para marcar.
-	        /// Exemplo: 'IsCheckMarcadoComEspaco("Id")'
-	        /// </summary>
-	        /// <param name="id"></param>
-	        public void IsCheckMarcadoComEspaco(string id)
-	        {
-	            GetDriver().FindElement(By.Id(id)).SendKeys(Keys.Space);
+	            driver.findElement(by).sendKeys(Keys.SPACE);
 	        }
 
 	        /********* Combo ************/
