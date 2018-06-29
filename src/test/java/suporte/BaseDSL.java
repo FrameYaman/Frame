@@ -149,13 +149,13 @@ public class BaseDSL {
 		Assert.assertEquals(texto, obterCampoTexto(by));
 	}
 			
-/******************** RADIO E CHECK ********************/
-	    
+/******************** RADIO E CHECK ********************/	    
 	
 	/**
 	 * Encontra elemento pela indicação solicitada e clica.
 	 * @param by (utilizado para indicar a Tag)
-	 * É necessário indicar a TAG referente. Exemplo: 'findElement(By.Id("Id"))'
+	 * É necessário indicar a TAG referente. 
+	 * Exemplo: 'common(By.Id("Id"))'
 	 * @author guilherme.teixeira
 	 */
 	public void common(By by)
@@ -165,22 +165,23 @@ public class BaseDSL {
 	
 	/**
 	 * Encontra elemento e confirma se está selecionado.
+	 * Exemplo: 'isElementoMarcado(By.Id("Id"))'
 	 * @author guilherme.teixeira
 	 * @param by (utilizado para indicar a Tag)
 	 * @return Boolean
-	 */
-	
-	public Boolean IsElementoMarcado(By by)
+	 */	
+	public Boolean isElementoMarcado(By by)
 	{
 	    return driver.findElement(by).isSelected();
 	}
 	
 	/**
 	 * Encontra campo Check, seleciona pressionando Espaço para marcar.
+	 * Exemplo: 'isCheckMarcadoComEspaco(By.Id("Id"))'
 	 * @param by (utilizado para indicar a Tag)
 	 * @author guilherme.teixeira
 	 */
-	public void IsCheckMarcadoComEspaco(By by)
+	public void isCheckMarcadoComEspaco(By by)
 	{
 	    driver.findElement(by).sendKeys(Keys.SPACE);
 	}
@@ -347,7 +348,7 @@ public class BaseDSL {
 	    return ObterTexto(By.Id(id));
 	}
 	
-	/********* Alerts ************/
+/******************** ALERTS ********************/
 	
 	/// <summary>
 	/// Desvia a atenção para um Alert obtém texto. Aceita Alert e retorna texto deste Alert.
