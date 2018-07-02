@@ -15,6 +15,10 @@ public class BaseDSL {
 	
 /******************** BARRA DE ROLAGEM ********************/
 	
+	public void url(String url) {
+		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
 	/**
 	 * Executa rolagem da página.
 	 * Exemplo: rolarPagina("window.scrollBy(0,650)");
@@ -190,255 +194,255 @@ public class BaseDSL {
 	
 	/// <summary>
 	/// Encontra campo Combo por Id e seleciona elemento deste Combo.
-	/// Exemplo: 'SelecionarCombo("Id" , "TextoDoCombo")'
-	/// </summary>
-	/// <param name="id"></param>
-	/// <param name="texto"></param>
-	public void SelecionarCombo(string id, string texto)
-	{
-	    IWebElement element = GetDriver().FindElement(By.Id(id));
-	    SelectElement combo = new SelectElement(element);
-	    combo.SelectByText(texto);
-	}
-	
-	/// <summary>
-	/// Encontra campo Combo por Id e retira a seleção do elemento deste Combo.
-	/// Exemplo: 'DeselecionarCombo("Id" , "TextoDoCombo")'
-	/// </summary>
-	
-	/// <param name="valor"></param>
-	public void DeselecionarCombo(string id, string valor)
-	{
-	    IWebElement element = GetDriver().FindElement(By.Id(id));
-	    SelectElement combo = new SelectElement(element);
-	    combo.DeselectByText(valor);
-	}
-	
-	/// <summary>
-	/// Encontra ComboBox por Id e seleciona o elemento de acordo com o indicado.       
-	/// Exemplo: 'ConfigurarElementoSelecionadoNoCombo("Id" , "3")'
-	/// Por padrão o índice indicado é sempre zero.
-	/// </summary>
-	/// <param name="idElemento"></param>
-	/// <param name="indice"></param>
-	public void ConfigurarElementoSelecionadoNoCombo(string idElemento, int indice = 0)
-	{
-	    IWebElement element = GetDriver().FindElement(By.Id(idElemento));
-	    SelectElement combo = new SelectElement(element);
-	    combo.SelectByIndex(indice);
-	}
-	
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="idElemento"></param>
-	/// <param name="texto"></param>
-	public void SelecionarComboPorVisibleText(By by, String texto)
-	{
-	    IWebElement element = GetDriver().FindElement(by);
-	    SelectElement combo = new SelectElement(element);
-	    combo.SelectByText(texto);
-	}
-	
-	/// <summary>
-	/// Encontra o ComboBox por Id e obtém o primeiro elemento.
-	/// Exemplo: 'ObterPrimeiroElementoDoCombo("Id")'
-	/// </summary>
-	/// <param name="id"></param>
-	/// <returns></returns>
-	public string ObterPrimeiroElementoDoCombo(string id)
-	{
-	    IWebElement element = GetDriver().FindElement(By.Id(id));
-	    SelectElement combo = new SelectElement(element);
-	    ConfigurarElementoSelecionadoNoCombo(id);
-	    return combo.SelectedOption.Text; // retorna o texto do primeiro elemento na variável
-	}
-	
-/******************** BOTÃO ********************/
-	
-	/**
-	 * Encontra elemento Botão por indicação selecionada e clica.
-	 * É necessário indicar a TAG referente. Exemplo: 'ClicarBotaoBy(By.Id("Id"))'
-	 * @param by
-	 */
-	public void clicarBotaoBy(By by)
-	{
-	    driver.findElement(by).click();
-	}
-	
-	public void tagnameClicarBotão(String tag)
-	{
-	    driver.findElement(By.tagName(tag)).click();
-	}
-	
-	/// <summary>
-	/// Encontra botão por Id e clica.
-	/// Exemplo: 'ClicarBotaoId("Id")'
-	/// </summary>
-	/// <param name="id"></param>
-	public void ClicarBotaoId(string id)
-	{
-	    ClicarBotaoBy(By.Id(id));
-	}
-	
-	/// <summary>
-	/// Encontra botão por ClassName e clica.
-	/// Exemplo: 'ClicarBotaoClass("ClassName")'
-	/// </summary>
-	/// <param name="classe"></param>
-	public void ClicarBotaoClass(string classe)
-	{
-	    GetDriver().FindElement(By.ClassName(classe)).Click();
-	}
-	
-	/// <summary>
-	/// Encontra botão por Name e clica.
-	/// Exemplo: 'ClicarBotaoName("Name")'
-	/// </summary>
-	/// <param name="name"></param>
-	public void ClicarBotaoName(string name)
-	{
-	    GetDriver().FindElement(By.Name(name)).Click();
-	}
-	
-	/// <summary>
-	/// Encontra botão de link por CssSelector e clica.
-	/// Exemplo: 'ClicarBotaoCssSelector("[href*='link']");
-	/// </summary>
-	/// <param name="name"></param>
-	public void ClicarBotaoCssSelector(string link)
-	{
-	    GetDriver().FindElement(By.CssSelector(link)).Click();
-	}
-	
-	
-/******************** LINK ********************/
-	
-	/// <summary>
-	/// Encontra elemento por LinkText e clica.
-	/// Exemplo 'ClicarLink("link")'
-	/// </summary>
-	/// <param name="link"></param>
-	public void ClicarLink(string link)
-	{
-	    GetDriver().FindElement(By.LinkText(link)).Click();
-	}
-	
-/******************** TEXTOS ********************/
-	
-	/// <summary>
-	/// Encontra elemento Text por indicação selecionada e reserva texto encontrado.
-	/// É necessário indicar a TAG referente. Exemplo: 'ObterTexto(By.Id("Id"))'
-	/// </summary>
-	/// <param name="by"></param>
-	/// <returns></returns>
-	public string ObterTexto(By by)
-	{
-	    return GetDriver().FindElement(by).Text;
-	}
-	
-	/// <summary>
-	///  Encontra elemento Text por Id e reserva texto encontrado.
-	///  Exemplo: 'ObterTexto("Id")'
-	/// </summary>
-	/// <param name="id"></param>
-	/// <returns></returns>
-	public string ObterTextoPorId(string id)
-	{
-	    return ObterTexto(By.Id(id));
-	}
-	
-/******************** ALERTS ********************/
-	
-	/// <summary>
-	/// Desvia a atenção para um Alert obtém texto. Aceita Alert e retorna texto deste Alert.
-	/// Exemplo: 'AlertaObterTextoEAceita()'
-	/// </summary>
-	/// <returns></returns>
-	public string AlertaObterTextoEAceita()
-	{
-	    IAlert alert = GetDriver().SwitchTo().Alert();
-	    string valor = alert.Text;
-	    alert.Accept();
-	    return valor;
-	}
-	
-	/// <summary>
-	/// Desvia a atenção para um Alert obtém texto. Rejeita Alert e retorna texto deste Alert.
-	/// Exemplo: 'AlertaObterTextoENega()'
-	/// </summary>
-	/// <returns></returns>
-	public string AlertaObterTextoENega()
-	{
-	    IAlert alert = GetDriver().SwitchTo().Alert();
-	    string valor = alert.Text;
-	    alert.Dismiss();
-	    return valor;
-	}
-	
-	/// <summary>
-	/// Desvia a atenção para um Alert escreve texto indicado e aceita Alert.
-	/// Exemplo: 'AlertaEscrever("Texto")'
-	/// </summary>
-	/// <param name="valor"></param>
-	public void AlertaEscrever(string valor)
-	{
-	    IAlert alert = GetDriver().SwitchTo().Alert();
-	    alert.SendKeys(valor);
-	    alert.Accept();
-	}
-	
-/******************** FRAMES E JANELAS ********************/
-	
-	/// <summary>
-	/// Desvia a atenção para um Frame por Id indicado e entra.
-	/// Exemplo: 'EntrarFrame("Id")'
-	/// </summary>
-	/// <param name="id"></param>
-	public void EntrarFrame(string id)
-	{
-	    GetDriver().SwitchTo().Frame(id);
-	}
-	
-	/// <summary>
-	/// Sai do Frame e retorna para a página principal.
-	/// Exemplo: 'SairFrame()'
-	/// </summary>
-	public void SairFrame()
-	{
-	    GetDriver().SwitchTo().DefaultContent();
-	}
-	
-	/// <summary>
-	/// Desvia a atenção para uma janela por Id indicado.
-	/// Exemplo: 'TrocarJanela("Id")'
-	/// </summary>
-	/// <param name="id"></param>
-	public void TrocarJanela(string id)
-	{
-	    GetDriver().SwitchTo().Window(id);
-	}
-	
-/******************** TEMPO ********************/
-	
-	/// <summary>
-	/// Espera o tempo determinado por milisegundos para carregar. Utilziar números inteiros.
-	/// Exemplo: 'EsperaCarregar(tempo)'
-	/// </summary>
-	/// <param name="tempo"></param>
-	public void EsperaCarregar(int tempo)
-	{
-	    Thread.Sleep(tempo);
-	
-	}
-	/// <summary>
-	/// Encontra o elemento pelo xpath e preenche o campo com o texto.
-	/// </summary>
-	/// <param name="xpath"></param>
-	/// <param name="texto"></param>
-	public void EncontraxpathEscreveTexto(string xpath, string texto)
-	{
-	    EscreveTexto(By.XPath(xpath), texto);
-	}
-		
+//	/// Exemplo: 'SelecionarCombo("Id" , "TextoDoCombo")'
+//	/// </summary>
+//	/// <param name="id"></param>
+//	/// <param name="texto"></param>
+//	public void SelecionarCombo(string id, string texto)
+//	{
+//	    IWebElement element = GetDriver().FindElement(By.Id(id));
+//	    SelectElement combo = new SelectElement(element);
+//	    combo.SelectByText(texto);
+//	}
+//	
+//	/// <summary>
+//	/// Encontra campo Combo por Id e retira a seleção do elemento deste Combo.
+//	/// Exemplo: 'DeselecionarCombo("Id" , "TextoDoCombo")'
+//	/// </summary>
+//	
+//	/// <param name="valor"></param>
+//	public void DeselecionarCombo(string id, string valor)
+//	{
+//	    IWebElement element = GetDriver().FindElement(By.Id(id));
+//	    SelectElement combo = new SelectElement(element);
+//	    combo.DeselectByText(valor);
+//	}
+//	
+//	/// <summary>
+//	/// Encontra ComboBox por Id e seleciona o elemento de acordo com o indicado.       
+//	/// Exemplo: 'ConfigurarElementoSelecionadoNoCombo("Id" , "3")'
+//	/// Por padrão o índice indicado é sempre zero.
+//	/// </summary>
+//	/// <param name="idElemento"></param>
+//	/// <param name="indice"></param>
+//	public void ConfigurarElementoSelecionadoNoCombo(string idElemento, int indice = 0)
+//	{
+//	    IWebElement element = GetDriver().FindElement(By.Id(idElemento));
+//	    SelectElement combo = new SelectElement(element);
+//	    combo.SelectByIndex(indice);
+//	}
+//	
+//	/// <summary>
+//	/// 
+//	/// </summary>
+//	/// <param name="idElemento"></param>
+//	/// <param name="texto"></param>
+//	public void SelecionarComboPorVisibleText(By by, String texto)
+//	{
+//	    IWebElement element = GetDriver().FindElement(by);
+//	    SelectElement combo = new SelectElement(element);
+//	    combo.SelectByText(texto);
+//	}
+//	
+//	/// <summary>
+//	/// Encontra o ComboBox por Id e obtém o primeiro elemento.
+//	/// Exemplo: 'ObterPrimeiroElementoDoCombo("Id")'
+//	/// </summary>
+//	/// <param name="id"></param>
+//	/// <returns></returns>
+//	public string ObterPrimeiroElementoDoCombo(string id)
+//	{
+//	    IWebElement element = GetDriver().FindElement(By.Id(id));
+//	    SelectElement combo = new SelectElement(element);
+//	    ConfigurarElementoSelecionadoNoCombo(id);
+//	    return combo.SelectedOption.Text; // retorna o texto do primeiro elemento na variável
+//	}
+//	
+///******************** BOTÃO ********************/
+//	
+//	/**
+//	 * Encontra elemento Botão por indicação selecionada e clica.
+//	 * É necessário indicar a TAG referente. Exemplo: 'ClicarBotaoBy(By.Id("Id"))'
+//	 * @param by
+//	 */
+//	public void clicarBotaoBy(By by)
+//	{
+//	    driver.findElement(by).click();
+//	}
+//	
+//	public void tagnameClicarBotão(String tag)
+//	{
+//	    driver.findElement(By.tagName(tag)).click();
+//	}
+//	
+//	/// <summary>
+//	/// Encontra botão por Id e clica.
+//	/// Exemplo: 'ClicarBotaoId("Id")'
+//	/// </summary>
+//	/// <param name="id"></param>
+//	public void ClicarBotaoId(string id)
+//	{
+//	    ClicarBotaoBy(By.Id(id));
+//	}
+//	
+//	/// <summary>
+//	/// Encontra botão por ClassName e clica.
+//	/// Exemplo: 'ClicarBotaoClass("ClassName")'
+//	/// </summary>
+//	/// <param name="classe"></param>
+//	public void ClicarBotaoClass(string classe)
+//	{
+//	    GetDriver().FindElement(By.ClassName(classe)).Click();
+//	}
+//	
+//	/// <summary>
+//	/// Encontra botão por Name e clica.
+//	/// Exemplo: 'ClicarBotaoName("Name")'
+//	/// </summary>
+//	/// <param name="name"></param>
+//	public void ClicarBotaoName(string name)
+//	{
+//	    GetDriver().FindElement(By.Name(name)).Click();
+//	}
+//	
+//	/// <summary>
+//	/// Encontra botão de link por CssSelector e clica.
+//	/// Exemplo: 'ClicarBotaoCssSelector("[href*='link']");
+//	/// </summary>
+//	/// <param name="name"></param>
+//	public void ClicarBotaoCssSelector(string link)
+//	{
+//	    GetDriver().FindElement(By.CssSelector(link)).Click();
+//	}
+//	
+//	
+///******************** LINK ********************/
+//	
+//	/// <summary>
+//	/// Encontra elemento por LinkText e clica.
+//	/// Exemplo 'ClicarLink("link")'
+//	/// </summary>
+//	/// <param name="link"></param>
+//	public void ClicarLink(string link)
+//	{
+//	    GetDriver().FindElement(By.LinkText(link)).Click();
+//	}
+//	
+///******************** TEXTOS ********************/
+//	
+//	/// <summary>
+//	/// Encontra elemento Text por indicação selecionada e reserva texto encontrado.
+//	/// É necessário indicar a TAG referente. Exemplo: 'ObterTexto(By.Id("Id"))'
+//	/// </summary>
+//	/// <param name="by"></param>
+//	/// <returns></returns>
+//	public string ObterTexto(By by)
+//	{
+//	    return GetDriver().FindElement(by).Text;
+//	}
+//	
+//	/// <summary>
+//	///  Encontra elemento Text por Id e reserva texto encontrado.
+//	///  Exemplo: 'ObterTexto("Id")'
+//	/// </summary>
+//	/// <param name="id"></param>
+//	/// <returns></returns>
+//	public string ObterTextoPorId(string id)
+//	{
+//	    return ObterTexto(By.Id(id));
+//	}
+//	
+///******************** ALERTS ********************/
+//	
+//	/// <summary>
+//	/// Desvia a atenção para um Alert obtém texto. Aceita Alert e retorna texto deste Alert.
+//	/// Exemplo: 'AlertaObterTextoEAceita()'
+//	/// </summary>
+//	/// <returns></returns>
+//	public string AlertaObterTextoEAceita()
+//	{
+//	    IAlert alert = GetDriver().SwitchTo().Alert();
+//	    string valor = alert.Text;
+//	    alert.Accept();
+//	    return valor;
+//	}
+//	
+//	/// <summary>
+//	/// Desvia a atenção para um Alert obtém texto. Rejeita Alert e retorna texto deste Alert.
+//	/// Exemplo: 'AlertaObterTextoENega()'
+//	/// </summary>
+//	/// <returns></returns>
+//	public string AlertaObterTextoENega()
+//	{
+//	    IAlert alert = GetDriver().SwitchTo().Alert();
+//	    string valor = alert.Text;
+//	    alert.Dismiss();
+//	    return valor;
+//	}
+//	
+//	/// <summary>
+//	/// Desvia a atenção para um Alert escreve texto indicado e aceita Alert.
+//	/// Exemplo: 'AlertaEscrever("Texto")'
+//	/// </summary>
+//	/// <param name="valor"></param>
+//	public void AlertaEscrever(string valor)
+//	{
+//	    IAlert alert = GetDriver().SwitchTo().Alert();
+//	    alert.SendKeys(valor);
+//	    alert.Accept();
+//	}
+//	
+///******************** FRAMES E JANELAS ********************/
+//	
+//	/// <summary>
+//	/// Desvia a atenção para um Frame por Id indicado e entra.
+//	/// Exemplo: 'EntrarFrame("Id")'
+//	/// </summary>
+//	/// <param name="id"></param>
+//	public void EntrarFrame(string id)
+//	{
+//	    GetDriver().SwitchTo().Frame(id);
+//	}
+//	
+//	/// <summary>
+//	/// Sai do Frame e retorna para a página principal.
+//	/// Exemplo: 'SairFrame()'
+//	/// </summary>
+//	public void SairFrame()
+//	{
+//	    GetDriver().SwitchTo().DefaultContent();
+//	}
+//	
+//	/// <summary>
+//	/// Desvia a atenção para uma janela por Id indicado.
+//	/// Exemplo: 'TrocarJanela("Id")'
+//	/// </summary>
+//	/// <param name="id"></param>
+//	public void TrocarJanela(string id)
+//	{
+//	    GetDriver().SwitchTo().Window(id);
+//	}
+//	
+///******************** TEMPO ********************/
+//	
+//	/// <summary>
+//	/// Espera o tempo determinado por milisegundos para carregar. Utilziar números inteiros.
+//	/// Exemplo: 'EsperaCarregar(tempo)'
+//	/// </summary>
+//	/// <param name="tempo"></param>
+//	public void EsperaCarregar(int tempo)
+//	{
+//	    Thread.Sleep(tempo);
+//	
+//	}
+//	/// <summary>
+//	/// Encontra o elemento pelo xpath e preenche o campo com o texto.
+//	/// </summary>
+//	/// <param name="xpath"></param>
+//	/// <param name="texto"></param>
+//	public void EncontraxpathEscreveTexto(string xpath, string texto)
+//	{
+//	    EscreveTexto(By.XPath(xpath), texto);
+//	}
+//		
 }
