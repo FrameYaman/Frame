@@ -1,6 +1,6 @@
 package suporte;
 
-public class Gatilho {
+public class Runner {
 	
 	BaseDSL baseDSL = new BaseDSL();
 	
