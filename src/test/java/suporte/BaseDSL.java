@@ -18,8 +18,14 @@ public class BaseDSL {
 	WebDriver driver = new ChromeDriver();
 	
 	
-/******************** BARRA DE ROLAGEM ********************/
+/******************** INTERAÇÕES NAVEGADOR ********************/
 	
+	/**
+	 * Indicar a url para navegação
+	 * Exemplo: url("http://www.exemplourl.com.br");
+	 * @author lucas.casanova
+	 * @param url
+	 */
 	public void url(String url) {
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
