@@ -39,7 +39,24 @@ public class BaseDSL {
 	{
 	    ((JavascriptExecutor)driver).executeScript(rolagem);
 	}
+	
+	/**
+	 * Espera o tempo determinado por milisegundos para carregar. Utilziar números inteiros.
+	  Exemplo: 'esperaCarregar(tempo)'
+	  @param by
+	  @param valor
+	  @author guilherme.teixeira
+	 */			
+	public void esperaCarregar(int tempo)
+	{
+		driver.manage().timeouts().implicitlyWait(tempo, TimeUnit.SECONDS);
+	}
 		
+	public void saida() {
+		driver.quit();
+	}
+	
+	
 /******************** TEXTFIELD E TEXTAREA ********************/
 	        	           
 	/**
@@ -341,18 +358,5 @@ public class BaseDSL {
 	{
 		driver.switchTo().window(elemento);
 	}
-
-/******************* TEMPO *******************/
-
-	/**
-	 * Espera o tempo determinado por milisegundos para carregar. Utilziar números inteiros.
-	  Exemplo: 'esperaCarregar(tempo)'
-	  @param by
-	  @param valor
-	  @author guilherme.teixeira
-	 */			
-	public void esperaCarregar(int tempo)
-	{
-		driver.manage().timeouts().implicitlyWait(tempo, TimeUnit.SECONDS);
-	}
+	
 }

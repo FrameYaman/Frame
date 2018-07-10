@@ -9,8 +9,9 @@ public class HomePageTest {
 	HomePage page = new HomePage();
 	
 	@Test
-	public void testeExemplo() {
+	public void testeDeExemplo() {
 		page.inicia();
-		page.clicaPerformaceEDisponibilidade();		
+		page.clicaPerformaceEDisponibilidade();	
+		page.finaliza();
 	}
 }
