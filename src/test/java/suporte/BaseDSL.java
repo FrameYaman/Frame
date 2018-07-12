@@ -39,7 +39,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Espera o tempo determinado por milisegundos para carregar. Utilziar números
+	 * Espera o tempo determinado por milisegundos para carregar. Utilizar números
 	 * inteiros. Exemplo: 'esperaCarregar(tempo)'
 	 * 
 	 * @param by
