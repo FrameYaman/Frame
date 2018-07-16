@@ -467,6 +467,7 @@ public class BaseDSL {
 				+ String.valueOf(n5) + String.valueOf(n6) + String.valueOf(n7) + String.valueOf(n8)
 				+ String.valueOf(n9);
 		numeroGerado = numerosContatenados;
+		System.out.println("RG gerado: " + numeroGerado);
 		return numeroGerado;
 	}
 

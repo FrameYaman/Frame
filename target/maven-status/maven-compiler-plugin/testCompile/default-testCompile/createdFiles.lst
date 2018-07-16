@@ -1,0 +1,5 @@
+test\HomePageTest.class
+suporte\BaseDSL.class
+page\SolucoesPage.class
+suporte\Runner.class
+page\HomePage.class
