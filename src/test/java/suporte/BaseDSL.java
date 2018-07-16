@@ -1,5 +1,6 @@
 package suporte;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
@@ -16,10 +17,10 @@ public class BaseDSL {
 
 	WebDriver driver = new ChromeDriver();
 
-	/******************** INTERAÇÕES NAVEGADOR ********************/
+	/******************** INTERAï¿½ï¿½ES NAVEGADOR ********************/
 
 	/**
-	 * Indicar a url para navegação Exemplo: url("http://www.exemplourl.com.br");
+	 * Indicar a url para navegaï¿½ï¿½o Exemplo: url("http://www.exemplourl.com.br");
 	 * 
 	 * @author lucas.casanova
 	 * @param url
@@ -30,7 +31,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Executa rolagem da página. Exemplo: rolarPagina("window.scrollBy(0,650)");
+	 * Executa rolagem da pï¿½gina. Exemplo: rolarPagina("window.scrollBy(0,650)");
 	 * 
 	 * @author lucas.casanova
 	 */
@@ -39,7 +40,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Espera o tempo determinado por milisegundos para carregar. Utilizar números
+	 * Espera o tempo determinado por milisegundos para carregar. Utilizar nï¿½meros
 	 * inteiros. Exemplo: 'esperaCarregar(tempo)'
 	 * 
 	 * @param by
@@ -51,7 +52,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Saída / Finalização do sistema
+	 * Saï¿½da / Finalizaï¿½ï¿½o do sistema
 	 * 
 	 * @author lucas.casanova
 	 */
@@ -62,8 +63,8 @@ public class BaseDSL {
 	/******************** TEXTFIELD E TEXTAREA ********************/
 
 	/**
-	 * Limpa a máscara que existe no campo de preenchimento e escreve texto neste
-	 * mesmo campo. É necessário indicar a TAG referente. Exemplo:
+	 * Limpa a mï¿½scara que existe no campo de preenchimento e escreve texto neste
+	 * mesmo campo. ï¿½ necessï¿½rio indicar a TAG referente. Exemplo:
 	 * 'escreveTexto(By.id("Id") , "texto")'
 	 * 
 	 * @author lucas.casanova
@@ -92,8 +93,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo e pressiona Enter. É necessário indicar a TAG referente. Exemplo:
+	 * Limpa a mï¿½scara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo e pressiona Enter. ï¿½ necessï¿½rio indicar a TAG referente. Exemplo:
 	 * 'EscreveEClicaEnter(By.Id("Id") , "texto")'
 	 * 
 	 * @author lucas.casanova
@@ -129,8 +130,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo. Este método chama comando 'ClassName'. Exemplo:
+	 * Limpa a mï¿½scara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo. Este mï¿½todo chama comando 'ClassName'. Exemplo:
 	 * 'escreverNaClasse("NomeDaClasse" , texto)'
 	 * 
 	 * @param nome_classe
@@ -141,8 +142,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo. Este método chama comando 'Id'. Exemplo: 'escreveId("Id" ,
+	 * Limpa a mï¿½scara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo. Este mï¿½todo chama comando 'Id'. Exemplo: 'escreveId("Id" ,
 	 * texto)'
 	 * 
 	 * @author lucas.casanova
@@ -154,7 +155,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra na página da Web através de Id e reserva por Tag encontrada.
+	 * Encontra na pï¿½gina da Web atravï¿½s de Id e reserva por Tag encontrada.
 	 * Exemplo: 'obterValorCampoAttribute("Id", "innerText")'
 	 * 
 	 * @author lucas.casanova
@@ -166,7 +167,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra na página da Web através de Id e reserva o texto encontrado.
+	 * Encontra na pï¿½gina da Web atravï¿½s de Id e reserva o texto encontrado.
 	 * Exemplo: 'obterCampoTexto("id")'
 	 * 
 	 * @author lucas.casanova
@@ -178,7 +179,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Verifica se campo obrigatório foi preenchido corretamente. Exemplo:
+	 * Verifica se campo obrigatï¿½rio foi preenchido corretamente. Exemplo:
 	 * 'checarCampoObrigatorio("texto" , "id")'
 	 * 
 	 * @author lucas.casanova
@@ -192,10 +193,10 @@ public class BaseDSL {
 	/******************** RADIO E CHECK ********************/
 
 	/**
-	 * Encontra elemento pela indicação solicitada e clica.
+	 * Encontra elemento pela indicaï¿½ï¿½o solicitada e clica.
 	 * 
 	 * @param by
-	 *            (utilizado para indicar a Tag) É necessário indicar a TAG
+	 *            (utilizado para indicar a Tag) ï¿½ necessï¿½rio indicar a TAG
 	 *            referente. Exemplo: 'common(By.Id("Id"))'
 	 * @author guilherme.teixeira
 	 */
@@ -204,7 +205,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento e confirma se está selecionado. Exemplo:
+	 * Encontra elemento e confirma se estï¿½ selecionado. Exemplo:
 	 * 'isElementoMarcado(By.Id("Id"))'
 	 * 
 	 * @author guilherme.teixeira
@@ -217,7 +218,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
+	 * Encontra campo Check, seleciona pressionando Espaï¿½o para marcar. Exemplo:
 	 * 'isCheckMarcadoComEspaco(By.Id("Id"))'
 	 * 
 	 * @param by
@@ -245,7 +246,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Combo por Id e retira a seleção do elemento deste Combo.
+	 * Encontra campo Combo por Id e retira a seleï¿½ï¿½o do elemento deste Combo.
 	 * Exemplo: 'deselecionarCombo("Id" , "TextoDoCombo")'
 	 * 
 	 * @param by
@@ -258,10 +259,10 @@ public class BaseDSL {
 		combo.deselectByVisibleText(valor);
 	}
 
-	/******************** BOTÃO ********************/
+	/******************** BOTï¿½O ********************/
 
 	/**
-	 * Encontra elemento Botão por indicação selecionada e clica. É necessário
+	 * Encontra elemento Botï¿½o por indicaï¿½ï¿½o selecionada e clica. ï¿½ necessï¿½rio
 	 * indicar a TAG referente. Exemplo: 'commonClicar(By.Id("Id"))'
 	 * 
 	 * @param by
@@ -273,8 +274,8 @@ public class BaseDSL {
 	/******************** TEXTOS ********************/
 
 	/**
-	 * Encontra elemento Text por indicação selecionada e reserva texto encontrado.
-	 * É necessário indicar a TAG referente. Exemplo: 'obterTexto(By.Id("Id"))'
+	 * Encontra elemento Text por indicaï¿½ï¿½o selecionada e reserva texto encontrado.
+	 * ï¿½ necessï¿½rio indicar a TAG referente. Exemplo: 'obterTexto(By.Id("Id"))'
 	 * 
 	 * @param by
 	 * @param valor
@@ -287,7 +288,7 @@ public class BaseDSL {
 	/******************** ALERTS ********************/
 
 	/**
-	 * Desvia a atenção para um Alert obtém texto. Aceita Alert e retorna texto
+	 * Desvia a atenï¿½ï¿½o para um Alert obtï¿½m texto. Aceita Alert e retorna texto
 	 * deste Alert. Exemplo: 'alertaObterTextoEAceita()'
 	 * 
 	 * @param by
@@ -302,7 +303,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Desvia a atenção para um Alert obtém texto. Rejeita Alert e retorna texto
+	 * Desvia a atenï¿½ï¿½o para um Alert obtï¿½m texto. Rejeita Alert e retorna texto
 	 * deste Alert. Exemplo: 'alertaObterTextoENega()'
 	 * 
 	 * @param by
@@ -317,7 +318,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Desvia a atenção para um Alert escreve texto indicado e aceita Alert.
+	 * Desvia a atenï¿½ï¿½o para um Alert escreve texto indicado e aceita Alert.
 	 * Exemplo: 'alertaEscrever("Texto")'
 	 * 
 	 * @param by
@@ -333,7 +334,7 @@ public class BaseDSL {
 	/******************* FRAMES E JANELAS *******************/
 
 	/**
-	 * Desvia a atenção para um Frame por Id indicado e entra. Exemplo:
+	 * Desvia a atenï¿½ï¿½o para um Frame por Id indicado e entra. Exemplo:
 	 * 'entrarFrame("Id")'
 	 * 
 	 * @param by
@@ -345,7 +346,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Sai do Frame e retorna para a página principal. Exemplo: 'SairFrame()'
+	 * Sai do Frame e retorna para a pï¿½gina principal. Exemplo: 'SairFrame()'
 	 * 
 	 * @param by
 	 * @param valor
@@ -356,7 +357,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Desvia a atenção para uma janela por Id indicado. Exemplo:
+	 * Desvia a atenï¿½ï¿½o para uma janela por Id indicado. Exemplo:
 	 * 'trocarJanela("elemento")'
 	 * 
 	 * @param by
@@ -367,4 +368,167 @@ public class BaseDSL {
 		driver.switchTo().window(elemento);
 	}
 
+	/********* CNPJ, CPF, Pessoa, Empresa e E-mail ************/
+
+	/**
+	 * Gerador de CNPJ automatico
+	 * 
+	 * @return numerogerado
+	 * @author joaofranco
+	 */
+	public String geraCNPJ()  {
+		int digito1 = 0, digito2 = 0, resto = 0;
+		String nDigResult;
+		String numerosContatenados;
+		String numeroGerado;
+		Random numeroAleatorio = new Random();
+
+		// numeros gerados
+		int n1 = numeroAleatorio.nextInt(10);
+		int n2 = numeroAleatorio.nextInt(10);
+		int n3 = numeroAleatorio.nextInt(10);
+		int n4 = numeroAleatorio.nextInt(10);
+		int n5 = numeroAleatorio.nextInt(10);
+		int n6 = numeroAleatorio.nextInt(10);
+		int n7 = numeroAleatorio.nextInt(10);
+		int n8 = numeroAleatorio.nextInt(10);
+		int n9 = numeroAleatorio.nextInt(10);
+		int n10 = numeroAleatorio.nextInt(10);
+		int n11 = numeroAleatorio.nextInt(10);
+		int n12 = numeroAleatorio.nextInt(10);
+		int soma = n12 * 2 + n11 * 3 + n10 * 4 + n9 * 5 + n8 * 6 + n7 * 7 + n6 * 8 + n5 * 9 + n4 * 2 + n3 * 3 + n2 * 4
+				+ n1 * 5;
+		int valor = (soma / 11) * 11;
+
+		digito1 = soma - valor;
+
+		// Primeiro resto da divisÃ£o por 11.
+		resto = (digito1 % 11);
+
+		if (digito1 < 2) {
+			digito1 = 0;
+		} else {
+			digito1 = 11 - resto;
+		}
+
+		int soma2 = digito1 * 2 + n12 * 3 + n11 * 4 + n10 * 5 + n9 * 6 + n8 * 7 + n7 * 8 + n6 * 9 + n5 * 2 + n4 * 3
+				+ n3 * 4 + n2 * 5 + n1 * 6;
+		int valor2 = (soma2 / 11) * 11;
+		digito2 = soma2 - valor2;
+
+		// Primeiro resto da divisÃ£o por 11.
+		resto = (digito2 % 11);
+
+		if (digito2 < 2) {
+			digito2 = 0;
+		} else {
+			digito2 = 11 - resto;
+		}
+
+		// Conctenando os numeros
+		numerosContatenados = String.valueOf(n1) + String.valueOf(n2) + "." + String.valueOf(n3) + String.valueOf(n4)
+				+ String.valueOf(n5) + "." + String.valueOf(n6) + String.valueOf(n7) + String.valueOf(n8) + "/"
+				+ String.valueOf(n9) + String.valueOf(n10) + String.valueOf(n11) + String.valueOf(n12) + "-";
+
+		// Concatenando o primeiro resto com o segundo.
+		nDigResult = String.valueOf(digito1) + String.valueOf(digito2);
+		numeroGerado = numerosContatenados + nDigResult;
+		System.out.println("Digito 2 ->" + digito2);
+		System.out.println("CNPJ Gerado " + numeroGerado);
+		return numeroGerado;
+	}
+
+	/**
+	 * Gerador de RG
+	 * 
+	 * @return numerogerado
+	 * @throws Exception
+	 * @author joaofranco
+	 */
+
+	public String gerarRg() {
+		String numerosContatenados;
+		String numeroGerado;
+		Random numeroAleatorio = new Random();
+
+		// numeros gerados
+		int n1 = numeroAleatorio.nextInt(10);
+		int n2 = numeroAleatorio.nextInt(10);
+		int n3 = numeroAleatorio.nextInt(10);
+		int n4 = numeroAleatorio.nextInt(10);
+		int n5 = numeroAleatorio.nextInt(10);
+		int n6 = numeroAleatorio.nextInt(10);
+		int n7 = numeroAleatorio.nextInt(10);
+		int n8 = numeroAleatorio.nextInt(10);
+		int n9 = numeroAleatorio.nextInt(10);
+
+		// Conctenando os numeros
+		numerosContatenados = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3) + String.valueOf(n4)
+				+ String.valueOf(n5) + String.valueOf(n6) + String.valueOf(n7) + String.valueOf(n8)
+				+ String.valueOf(n9);
+		numeroGerado = numerosContatenados;
+		return numeroGerado;
+	}
+
+	/**
+	 * Gerador de CPF automatico
+	 * 
+	 * @author joaofranco
+	 * @return numerogerado
+	 * 
+	 */
+	public String geraCPF() {
+		int digito1 = 0, digito2 = 0, resto = 0;
+		String nDigResult;
+		String numerosContatenados;
+		String numeroGerado;
+		Random numeroAleatorio = new Random();
+
+		// numeros gerados
+		int n1 = numeroAleatorio.nextInt(10);
+		int n2 = numeroAleatorio.nextInt(10);
+		int n3 = numeroAleatorio.nextInt(10);
+		int n4 = numeroAleatorio.nextInt(10);
+		int n5 = numeroAleatorio.nextInt(10);
+		int n6 = numeroAleatorio.nextInt(10);
+		int n7 = numeroAleatorio.nextInt(10);
+		int n8 = numeroAleatorio.nextInt(10);
+		int n9 = numeroAleatorio.nextInt(10);
+		int soma = n9 * 2 + n8 * 3 + n7 * 4 + n6 * 5 + n5 * 6 + n4 * 7 + n3 * 8 + n2 * 9 + n1 * 10;
+		int valor = (soma / 11) * 11;
+		digito1 = soma - valor;
+
+		// Primeiro resto da divisÃ£o por 11.
+		resto = (digito1 % 11);
+
+		if (digito1 < 2) {
+			digito1 = 0;
+		} else {
+			digito1 = 11 - resto;
+		}
+
+		int soma2 = digito1 * 2 + n9 * 3 + n8 * 4 + n7 * 5 + n6 * 6 + n5 * 7 + n4 * 8 + n3 * 9 + n2 * 10 + n1 * 11;
+		int valor2 = (soma2 / 11) * 11;
+		digito2 = soma2 - valor2;
+
+		// Primeiro resto da divisÃ£o por 11.
+		resto = (digito2 % 11);
+
+		if (digito2 < 2) {
+			digito2 = 0;
+		} else {
+			digito2 = 11 - resto;
+		}
+
+		// Conctenando os numeros
+		numerosContatenados = String.valueOf(n1) + String.valueOf(n2) + String.valueOf(n3) + "." + String.valueOf(n4)
+				+ String.valueOf(n5) + String.valueOf(n6) + "." + String.valueOf(n7) + String.valueOf(n8)
+				+ String.valueOf(n9) + "-";
+
+		// Concatenando o primeiro resto com o segundo.
+		nDigResult = String.valueOf(digito1) + String.valueOf(digito2);
+		numeroGerado = numerosContatenados + nDigResult;
+		System.out.println("CPF Gerado " + numeroGerado);
+		return numeroGerado;
+	}
 }
