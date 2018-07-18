@@ -17,10 +17,10 @@ public class BaseDSL {
 
 	WebDriver driver = new ChromeDriver();
 
-	/******************** INTERA��ES NAVEGADOR ********************/
+	/******************** INTERÇÕES NAVEGADOR ********************/
 
 	/**
-	 * Indicar a url para navega��o Exemplo: url("http://www.exemplourl.com.br");
+	 * Indicar a url para navegação Exemplo: url("http://www.exemplourl.com.br");
 	 * 
 	 * @author lucas.casanova
 	 * @param url
@@ -31,7 +31,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Executa rolagem da p�gina. Exemplo: rolarPagina("window.scrollBy(0,650)");
+	 * Executa rolagem da página. Exemplo: rolarPagina("window.scrollBy(0,650)");
 	 * 
 	 * @author lucas.casanova
 	 */
@@ -40,7 +40,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Espera o tempo determinado por milisegundos para carregar. Utilizar n�meros
+	 * Espera o tempo determinado por milisegundos para carregar. Utilizar números
 	 * inteiros. Exemplo: 'esperaCarregar(tempo)'
 	 * 
 	 * @param by
@@ -52,7 +52,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Sa�da / Finaliza��o do sistema
+	 * Saída / Finalização do sistema
 	 * 
 	 * @author lucas.casanova
 	 */
@@ -64,7 +64,7 @@ public class BaseDSL {
 
 	/**
 	 * Limpa a m�scara que existe no campo de preenchimento e escreve texto neste
-	 * mesmo campo. � necess�rio indicar a TAG referente. Exemplo:
+	 * mesmo campo. É necessário indicar a TAG referente. Exemplo:
 	 * 'escreveTexto(By.id("Id") , "texto")'
 	 * 
 	 * @author lucas.casanova
@@ -94,7 +94,7 @@ public class BaseDSL {
 
 	/**
 	 * Limpa a m�scara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo e pressiona Enter. � necess�rio indicar a TAG referente. Exemplo:
+	 * mesmo campo e pressiona Enter. É necessário indicar a TAG referente. Exemplo:
 	 * 'EscreveEClicaEnter(By.Id("Id") , "texto")'
 	 * 
 	 * @author lucas.casanova
@@ -130,8 +130,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a m�scara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo. Este m�todo chama comando 'ClassName'. Exemplo:
+	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo. Este método chama comando 'ClassName'. Exemplo:
 	 * 'escreverNaClasse("NomeDaClasse" , texto)'
 	 * 
 	 * @param nome_classe
@@ -142,8 +142,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a m�scara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo. Este m�todo chama comando 'Id'. Exemplo: 'escreveId("Id" ,
+	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo. Este método chama comando 'Id'. Exemplo: 'escreveId("Id" ,
 	 * texto)'
 	 * 
 	 * @author lucas.casanova
@@ -155,7 +155,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra na p�gina da Web atrav�s de Id e reserva por Tag encontrada.
+	 * Encontra na página da Web através de Id e reserva por Tag encontrada.
 	 * Exemplo: 'obterValorCampoAttribute("Id", "innerText")'
 	 * 
 	 * @author lucas.casanova
@@ -167,7 +167,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra na p�gina da Web atrav�s de Id e reserva o texto encontrado.
+	 * Encontra na página da Web através de Id e reserva o texto encontrado.
 	 * Exemplo: 'obterCampoTexto("id")'
 	 * 
 	 * @author lucas.casanova
@@ -179,7 +179,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Verifica se campo obrigat�rio foi preenchido corretamente. Exemplo:
+	 * Verifica se campo obrigatório foi preenchido corretamente. Exemplo:
 	 * 'checarCampoObrigatorio("texto" , "id")'
 	 * 
 	 * @author lucas.casanova
@@ -193,10 +193,10 @@ public class BaseDSL {
 	/******************** RADIO E CHECK ********************/
 
 	/**
-	 * Encontra elemento pela indica��o solicitada e clica.
+	 * Encontra elemento pela indicação solicitada e clica.
 	 * 
 	 * @param by
-	 *            (utilizado para indicar a Tag) � necess�rio indicar a TAG
+	 *            (utilizado para indicar a Tag) É necessário indicar a TAG
 	 *            referente. Exemplo: 'common(By.Id("Id"))'
 	 * @author guilherme.teixeira
 	 */
@@ -205,7 +205,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento e confirma se est� selecionado. Exemplo:
+	 * Encontra elemento e confirma se está selecionado. Exemplo:
 	 * 'isElementoMarcado(By.Id("Id"))'
 	 * 
 	 * @author guilherme.teixeira
@@ -218,7 +218,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Check, seleciona pressionando Espa�o para marcar. Exemplo:
+	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
 	 * 'isCheckMarcadoComEspaco(By.Id("Id"))'
 	 * 
 	 * @param by
@@ -246,7 +246,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Combo por Id e retira a sele��o do elemento deste Combo.
+	 * Encontra campo Combo por Id e retira a seleção do elemento deste Combo.
 	 * Exemplo: 'deselecionarCombo("Id" , "TextoDoCombo")'
 	 * 
 	 * @param by
@@ -262,7 +262,7 @@ public class BaseDSL {
 	/******************** BOT�O ********************/
 
 	/**
-	 * Encontra elemento Bot�o por indica��o selecionada e clica. � necess�rio
+	 * Encontra elemento Bot�o por indicação selecionada e clica. É necessário
 	 * indicar a TAG referente. Exemplo: 'commonClicar(By.Id("Id"))'
 	 * 
 	 * @param by
@@ -274,8 +274,8 @@ public class BaseDSL {
 	/******************** TEXTOS ********************/
 
 	/**
-	 * Encontra elemento Text por indica��o selecionada e reserva texto encontrado.
-	 * � necess�rio indicar a TAG referente. Exemplo: 'obterTexto(By.Id("Id"))'
+	 * Encontra elemento Text por indicação selecionada e reserva texto encontrado.
+	 * � necessário indicar a TAG referente. Exemplo: 'obterTexto(By.Id("Id"))'
 	 * 
 	 * @param by
 	 * @param valor
@@ -288,7 +288,7 @@ public class BaseDSL {
 	/******************** ALERTS ********************/
 
 	/**
-	 * Desvia a aten��o para um Alert obt�m texto. Aceita Alert e retorna texto
+	 * Desvia a atenção para um Alert obtém texto. Aceita Alert e retorna texto
 	 * deste Alert. Exemplo: 'alertaObterTextoEAceita()'
 	 * 
 	 * @param by
@@ -303,7 +303,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Desvia a aten��o para um Alert obt�m texto. Rejeita Alert e retorna texto
+	 * Desvia a atenção para um Alert obtém texto. Rejeita Alert e retorna texto
 	 * deste Alert. Exemplo: 'alertaObterTextoENega()'
 	 * 
 	 * @param by
@@ -318,7 +318,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Desvia a aten��o para um Alert escreve texto indicado e aceita Alert.
+	 * Desvia a atenção para um Alert escreve texto indicado e aceita Alert.
 	 * Exemplo: 'alertaEscrever("Texto")'
 	 * 
 	 * @param by
@@ -334,7 +334,7 @@ public class BaseDSL {
 	/******************* FRAMES E JANELAS *******************/
 
 	/**
-	 * Desvia a aten��o para um Frame por Id indicado e entra. Exemplo:
+	 * Desvia a atenção para um Frame por Id indicado e entra. Exemplo:
 	 * 'entrarFrame("Id")'
 	 * 
 	 * @param by
@@ -346,7 +346,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Sai do Frame e retorna para a p�gina principal. Exemplo: 'SairFrame()'
+	 * Sai do Frame e retorna para a página principal. Exemplo: 'SairFrame()'
 	 * 
 	 * @param by
 	 * @param valor
@@ -357,7 +357,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Desvia a aten��o para uma janela por Id indicado. Exemplo:
+	 * Desvia a atenção para uma janela por Id indicado. Exemplo:
 	 * 'trocarJanela("elemento")'
 	 * 
 	 * @param by
@@ -371,7 +371,7 @@ public class BaseDSL {
 	/********* CNPJ, CPF, Pessoa, Empresa e E-mail ************/
 
 	/**
-	 * Gerador de CNPJ automatico
+	 * Gerador de CNPJ automático
 	 * 
 	 * @return numerogerado
 	 * @author joaofranco

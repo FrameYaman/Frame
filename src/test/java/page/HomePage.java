@@ -8,7 +8,7 @@ public class HomePage {
 	
 	BaseDSL baseDSL = new BaseDSL();
 	
-/*********** IN�CIO NAVEGA��O **********/	
+/*********** INÍCIO NAVEGAÇÃO **********/	
 	public void inicia() {
 		baseDSL.url("http://www.yaman.com.br");
 	}
