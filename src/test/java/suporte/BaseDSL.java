@@ -1,13 +1,24 @@
 package suporte;
 
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.sql.Date;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
+
+import javax.imageio.ImageIO;
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -58,6 +69,41 @@ public class BaseDSL {
 	 */
 	public void saida() {
 		driver.quit();
+	}
+	
+	/**
+	 * Tirar Screenshot
+	 * 
+	 * @author felipe.lourenco
+	 */
+	
+	public static void screenshot() throws Exception{
+								
+		final long SEGUNDOS  = (1000 * 10);
+		Timer timer = new Timer();
+		
+		TimerTask tarefa = new TimerTask() {
+			@Override
+			public void run() {
+				tirarPrint("c:\\print\\Evidência" + new Date().getTime() + ".png");
+			}
+		};
+		
+		timer.scheduleAtFixedRate(tarefa, 0, SEGUNDOS);
+	}
+	
+	public static void tirarPrint(String pCaminhoPrint) {
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		
+		Dimension tamanhoTela = toolkit.getScreenSize();
+		
+		Rectangle limitesTela = new Rectangle (tamanhoTela);
+		
+		Robot robot = new Robot();
+		
+		BufferedImage capturaTela = robot.createScreenCapture(limitesTela);
+		
+		ImageIO.write(capturaDeTela, "png", new File(pCaminhoPrint));
 	}
 
 	/******************** TEXTFIELD E TEXTAREA ********************/
