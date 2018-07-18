@@ -104,6 +104,8 @@ public class BaseDSL {
 		BufferedImage capturaTela = robot.createScreenCapture(limitesTela);
 		
 		ImageIO.write(capturaDeTela, "png", new File(pCaminhoPrint));
+		
+		//FALTA TESTAR
 	}
 
 	/******************** TEXTFIELD E TEXTAREA ********************/
