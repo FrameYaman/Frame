@@ -3,8 +3,10 @@ package suporte;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Date;
 import java.util.Random;
 import java.util.Timer;
@@ -91,14 +93,15 @@ public class BaseDSL {
 			FileUtils.copyFile(file, new File("FrameYaman\\Evidencias\\Screenshot" + i + ".png"));
 			i = i + 1;
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		
+		}catch(
+
+	IOException e)
+	{
+		e.printStackTrace();
 	}
-	
-	
+
+	}
+
 	/******************** TEXTFIELD E TEXTAREA ********************/
 
 	/**
@@ -107,27 +110,21 @@ public class BaseDSL {
 	 * 'escreveTexto(By.id("Id") , "texto")'
 	 * 
 	 * @author lucas.casanova
-	 * @param by
-	 *            (utilizado para indicar a Tag)
-	 * @param texto
-	 *            (utilizado para indicar o texto)
+	 * @param by    (utilizado para indicar a Tag)
+	 * @param texto (utilizado para indicar o texto)
 	 */
 	public void escreveTexto(By by, String texto) {
 		getDriver().findElement(by).clear();
 		getDriver().findElement(by).sendKeys(texto);
 	}
-	
-	
 
 	/**
 	 * Encontra campo de preenchimento por Name, escreve texto neste mesmo campo.
 	 * Exemplo: 'encontraNameEscreveTexto("Name" , "texto")'
 	 * 
 	 * @author lucas.casanova
-	 * @param name
-	 *            (utilizado para indicar TAG name)
-	 * @param texto
-	 *            (utilizado para indicar o texto)
+	 * @param name  (utilizado para indicar TAG name)
+	 * @param texto (utilizado para indicar o texto)
 	 */
 	public void encontraNameEscreveTexto(String name, String texto) {
 		escreveTexto(By.name(name), texto);
@@ -236,9 +233,8 @@ public class BaseDSL {
 	/**
 	 * Encontra elemento pela indicação solicitada e clica.
 	 * 
-	 * @param by
-	 *            (utilizado para indicar a Tag) É necessário indicar a TAG
-	 *            referente. Exemplo: 'common(By.Id("Id"))'
+	 * @param by (utilizado para indicar a Tag) É necessário indicar a TAG
+	 *           referente. Exemplo: 'common(By.Id("Id"))'
 	 * @author guilherme.teixeira
 	 */
 	public void common(By by) {
@@ -250,8 +246,7 @@ public class BaseDSL {
 	 * 'isElementoMarcado(By.Id("Id"))'
 	 * 
 	 * @author guilherme.teixeira
-	 * @param by
-	 *            (utilizado para indicar a Tag)
+	 * @param by (utilizado para indicar a Tag)
 	 * @return Boolean
 	 */
 	public Boolean isElementoMarcado(By by) {
@@ -262,8 +257,7 @@ public class BaseDSL {
 	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
 	 * 'isCheckMarcadoComEspaco(By.Id("Id"))'
 	 * 
-	 * @param by
-	 *            (utilizado para indicar a Tag)
+	 * @param by (utilizado para indicar a Tag)
 	 * @author guilherme.teixeira
 	 */
 	public void isCheckMarcadoComEspaco(By by) {
@@ -417,7 +411,7 @@ public class BaseDSL {
 	 * @return numerogerado
 	 * @author joaofranco
 	 */
-	public String geraCNPJ()  {
+	public String geraCNPJ() {
 		int digito1 = 0, digito2 = 0, resto = 0;
 		String nDigResult;
 		String numerosContatenados;
@@ -573,6 +567,42 @@ public class BaseDSL {
 		System.out.println("CPF Gerado " + numeroGerado);
 		return numeroGerado;
 	}
-	
-	
+
+	/**
+	 * Metodo onde podera ser usado caso queira rodar algum progama no Shell do
+	 * Windows
+	 * 
+	 * @author joao.celino
+	 * 
+	 */
+
+	public void shell(String comando) {
+		
+		String ping = comando;
+
+		String[] cmds = { ping };
+
+		try {
+			ProcessBuilder builder = new ProcessBuilder("cmd", "/c", String.join("& ", cmds));
+
+			builder.redirectErrorStream(true);
+
+			Process p = builder.start();
+
+			BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			String line;
+
+			while (true) {
+				line = r.readLine();
+				if (line == null) {
+					break;
+				}
+
+				System.out.println(line);
+			}
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+	}
+
 }
