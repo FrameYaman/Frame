@@ -4,29 +4,36 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.sql.Date;
+import java.io.IOException;
+import java.util.Date;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
+import static suporte.Runner.getDriver;
+
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
+import org.junit.rules.TestName;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class BaseDSL {
-
-	WebDriver driver = new ChromeDriver();
 
 	/******************** INTERÇÕES NAVEGADOR ********************/
 
@@ -37,8 +44,8 @@ public class BaseDSL {
 	 * @param url
 	 */
 	public void url(String url) {
-		driver.get(url);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		getDriver().get(url);
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	/**
@@ -47,7 +54,7 @@ public class BaseDSL {
 	 * @author lucas.casanova
 	 */
 	public void rolarPagina(String rolagem) {
-		((JavascriptExecutor) driver).executeScript(rolagem);
+		((JavascriptExecutor) getDriver()).executeScript(rolagem);
 	}
 
 	/**
@@ -59,7 +66,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public void esperaCarregar(int tempo) {
-		driver.manage().timeouts().implicitlyWait(tempo, TimeUnit.SECONDS);
+		getDriver().manage().timeouts().implicitlyWait(tempo, TimeUnit.SECONDS);
 	}
 
 	/**
@@ -68,7 +75,7 @@ public class BaseDSL {
 	 * @author lucas.casanova
 	 */
 	public void saida() {
-		driver.quit();
+		getDriver().quit();
 	}
 	
 	/**
@@ -76,38 +83,22 @@ public class BaseDSL {
 	 * 
 	 * @author felipe.lourenco
 	 */
-	
-	public static void screenshot() throws Exception{
-								
-		final long SEGUNDOS  = (1000 * 10);
-		Timer timer = new Timer();
-		
-		TimerTask tarefa = new TimerTask() {
-			@Override
-			public void run() {
-				tirarPrint("c:\\print\\Evidência" + new Date().getTime() + ".png");
+	public void TakeScreenShot() {
+		int i = 1;
+		File file = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+		try {
+			while(//definir parametro) {
+			FileUtils.copyFile(file, new File("FrameYaman\\Evidencias\\Screenshot" + i + ".png"));
+			i = i + 1;
 			}
-		};
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
-		timer.scheduleAtFixedRate(tarefa, 0, SEGUNDOS);
+		
 	}
 	
-	public static void tirarPrint(String pCaminhoPrint) {
-		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		
-		Dimension tamanhoTela = toolkit.getScreenSize();
-		
-		Rectangle limitesTela = new Rectangle (tamanhoTela);
-		
-		Robot robot = new Robot();
-		
-		BufferedImage capturaTela = robot.createScreenCapture(limitesTela);
-		
-		ImageIO.write(capturaDeTela, "png", new File(pCaminhoPrint));
-		
-		//FALTA TESTAR
-	}
-
+	
 	/******************** TEXTFIELD E TEXTAREA ********************/
 
 	/**
@@ -122,9 +113,11 @@ public class BaseDSL {
 	 *            (utilizado para indicar o texto)
 	 */
 	public void escreveTexto(By by, String texto) {
-		driver.findElement(by).clear();
-		driver.findElement(by).sendKeys(texto);
+		getDriver().findElement(by).clear();
+		getDriver().findElement(by).sendKeys(texto);
 	}
+	
+	
 
 	/**
 	 * Encontra campo de preenchimento por Name, escreve texto neste mesmo campo.
@@ -151,7 +144,7 @@ public class BaseDSL {
 	 */
 	public void escreveEClicaEnter(By by, String texto) {
 		escreveTexto(by, texto);
-		driver.findElement(by).sendKeys(Keys.ENTER);
+		getDriver().findElement(by).sendKeys(Keys.ENTER);
 	}
 
 	/**
@@ -161,7 +154,7 @@ public class BaseDSL {
 	 * @param name
 	 */
 	public void clicaNameComBackspace(String name) {
-		driver.findElement(By.name(name)).sendKeys(Keys.BACK_SPACE);
+		getDriver().findElement(By.name(name)).sendKeys(Keys.BACK_SPACE);
 	}
 
 	/**
@@ -211,7 +204,7 @@ public class BaseDSL {
 	 * @return
 	 */
 	public String obterValorCampoAttribute(By by, String tag) {
-		return driver.findElement(by).getAttribute(tag);
+		return getDriver().findElement(by).getAttribute(tag);
 	}
 
 	/**
@@ -223,7 +216,7 @@ public class BaseDSL {
 	 * @return
 	 */
 	public String obterCampoTexto(By by) {
-		return driver.findElement(by).getText();
+		return getDriver().findElement(by).getText();
 	}
 
 	/**
@@ -249,7 +242,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public void common(By by) {
-		driver.findElement(by).click();
+		getDriver().findElement(by).click();
 	}
 
 	/**
@@ -262,7 +255,7 @@ public class BaseDSL {
 	 * @return Boolean
 	 */
 	public Boolean isElementoMarcado(By by) {
-		return driver.findElement(by).isSelected();
+		return getDriver().findElement(by).isSelected();
 	}
 
 	/**
@@ -274,7 +267,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public void isCheckMarcadoComEspaco(By by) {
-		driver.findElement(by).sendKeys(Keys.SPACE);
+		getDriver().findElement(by).sendKeys(Keys.SPACE);
 	}
 
 	/******************** COMBO ********************/
@@ -288,7 +281,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public void selecionarCombo(By by, String texto) {
-		WebElement elemento = driver.findElement(by);
+		WebElement elemento = getDriver().findElement(by);
 		Select combo = new Select(elemento);
 		combo.selectByVisibleText(texto);
 	}
@@ -302,7 +295,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public void deselecionarCombo(By by, String valor) {
-		WebElement elemento = driver.findElement(by);
+		WebElement elemento = getDriver().findElement(by);
 		Select combo = new Select(elemento);
 		combo.deselectByVisibleText(valor);
 	}
@@ -316,7 +309,7 @@ public class BaseDSL {
 	 * @param by
 	 */
 	public void commonClicar(By by) {
-		driver.findElement(by).click();
+		getDriver().findElement(by).click();
 	}
 
 	/******************** TEXTOS ********************/
@@ -330,7 +323,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public String obterTexto(By by) {
-		return driver.findElement(by).getText();
+		return getDriver().findElement(by).getText();
 	}
 
 	/******************** ALERTS ********************/
@@ -344,7 +337,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public String alertaObterTextoEAceita() {
-		Alert alerta = driver.switchTo().alert();
+		Alert alerta = getDriver().switchTo().alert();
 		String valor = alerta.getText();
 		alerta.accept();
 		return valor;
@@ -359,7 +352,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public String AlertaObterTextoENega() {
-		Alert alerta = driver.switchTo().alert();
+		Alert alerta = getDriver().switchTo().alert();
 		String valor = alerta.getText();
 		alerta.dismiss();
 		return valor;
@@ -374,7 +367,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public void alertaEscrever(String texto) {
-		Alert alerta = driver.switchTo().alert();
+		Alert alerta = getDriver().switchTo().alert();
 		alerta.sendKeys(texto);
 		alerta.accept();
 	}
@@ -390,7 +383,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public void entrarFrame(String elemento) {
-		driver.switchTo().frame(elemento);
+		getDriver().switchTo().frame(elemento);
 	}
 
 	/**
@@ -401,7 +394,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public void sairFrame() {
-		driver.switchTo().defaultContent();
+		getDriver().switchTo().defaultContent();
 	}
 
 	/**
@@ -413,7 +406,7 @@ public class BaseDSL {
 	 * @author guilherme.teixeira
 	 */
 	public void trocarJanela(String elemento) {
-		driver.switchTo().window(elemento);
+		getDriver().switchTo().window(elemento);
 	}
 
 	/********* CNPJ, CPF, Pessoa, Empresa e E-mail ************/
