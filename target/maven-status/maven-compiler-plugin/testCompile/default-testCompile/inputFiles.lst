@@ -1,5 +1,14 @@
+<<<<<<< Updated upstream
 C:\Users\joao.celino\git\FrameYaman\src\test\java\test\HomePageTest.java
 C:\Users\joao.celino\git\FrameYaman\src\test\java\page\HomePage.java
 C:\Users\joao.celino\git\FrameYaman\src\test\java\suporte\BaseDSL.java
 C:\Users\joao.celino\git\FrameYaman\src\test\java\suporte\Runner.java
 C:\Users\joao.celino\git\FrameYaman\src\test\java\page\SolucoesPage.java
+=======
+C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\suporte\Propriedades.java
+C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\suporte\Runner.java
+C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\page\SolucoesPage.java
+C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\page\HomePage.java
+C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\suporte\BaseDSL.java
+C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\test\HomePageTest.java
+>>>>>>> Stashed changes
