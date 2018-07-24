@@ -1,4 +1,5 @@
 package suporte;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -58,20 +59,13 @@ public class BaseDSL {
 	public void saida() {
 		getDriver().quit();
 	}
-	
-	
+
 	/******************** TEXTFIELD E TEXTAREA ********************/
 
 	/**
-	 * Limpa a m�scara que existe no campo de preenchimento e escreve texto neste
-	 * mesmo campo. É necessário indicar a TAG referente. Exemplo:
-	 * 'escreveTexto(By.id("Id") , "texto")'
+	 * Deve ser usado somente na base
 	 * 
 	 * @author lucas.casanova
-	 * @param by
-	 *            (utilizado para indicar a Tag)
-	 * @param texto
-	 *            (utilizado para indicar o texto)
 	 */
 	public void escreveTexto(By by, String texto) {
 		getDriver().findElement(by).clear();
@@ -79,41 +73,70 @@ public class BaseDSL {
 	}
 
 	/**
+	 * Limpa a máscara que existe no campo de preenchimento e escreve texto neste
+	 * mesmo campo. É necessário indicar o id referente. Exemplo:
+	 * 'escreveTextoId("elementoId") , "texto")'
+	 * 
+	 * @author lucas.casanova
+	 */
+	public void escreveTextoId(String elementoId, String texto) {
+		getDriver().findElement(By.id(elementoId)).clear();
+		getDriver().findElement(By.id(elementoId)).sendKeys(texto);
+	}
+
+	/**
 	 * Encontra campo de preenchimento por Name, escreve texto neste mesmo campo.
-	 * Exemplo: 'encontraNameEscreveTexto("Name" , "texto")'
+	 * Exemplo: 'escreveTextoName("elementoName" , "texto")'
 	 * 
 	 * @author lucas.casanova
-	 * @param name
-	 *            (utilizado para indicar TAG name)
-	 * @param texto
-	 *            (utilizado para indicar o texto)
 	 */
-	public void encontraNameEscreveTexto(String name, String texto) {
-		escreveTexto(By.name(name), texto);
+	public void escreveTextoName(String elementoName, String texto) {
+		getDriver().findElement(By.name(elementoName)).clear();
+		getDriver().findElement(By.name(elementoName)).sendKeys(texto);
 	}
 
 	/**
-	 * Limpa a m�scara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo e pressiona Enter. É necessário indicar a TAG referente. Exemplo:
-	 * 'EscreveEClicaEnter(By.Id("Id") , "texto")'
+	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo e pressiona Enter. É necessário indicar a Tag Id referente.
+	 * Exemplo: 'escreveTextoIdEClicaEnter("elementoId") , "texto")'
 	 * 
 	 * @author lucas.casanova
-	 * @param by
-	 * @param texto
 	 */
-	public void escreveEClicaEnter(By by, String texto) {
-		escreveTexto(by, texto);
-		getDriver().findElement(by).sendKeys(Keys.ENTER);
+	public void escreveTextoIdEClicaEnter(String elementoId, String texto) {
+		escreveTextoId(elementoId, texto);
+		getDriver().findElement(By.id(elementoId)).sendKeys(Keys.ENTER);
 	}
 
 	/**
-	 * Encontra Tag Name e clica com Backspace. Exemplo: 'clicaComBackspace("name")'
+	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo e pressiona Enter. É necessário indicar a Tag Name referente.
+	 * Exemplo: 'escreveTextoNameEClicaEnter("elementoName" , "texto")'
 	 * 
 	 * @author lucas.casanova
-	 * @param name
 	 */
-	public void clicaNameComBackspace(String name) {
-		getDriver().findElement(By.name(name)).sendKeys(Keys.BACK_SPACE);
+	public void escreveTextoNameEClicaEnter(String elementoName, String texto) {
+		escreveTextoId(elementoName, texto);
+		getDriver().findElement(By.id(elementoName)).sendKeys(Keys.ENTER);
+	}
+
+	/**
+	 * Encontra Tag Name e clica com Backspace. Exemplo:
+	 * 'clicaComBackspace("elementoId")'
+	 * 
+	 * @author lucas.casanova
+	 */
+	public void clicaIdComBackspace(String elementoId) {
+		getDriver().findElement(By.id(elementoId)).sendKeys(Keys.BACK_SPACE);
+	}
+
+	/**
+	 * Encontra Tag Name e clica com Backspace. Exemplo:
+	 * 'clicaComBackspace("elementoName")'
+	 * 
+	 * @author lucas.casanova
+	 */
+	public void clicaNameComBackspace(String elementoName) {
+		getDriver().findElement(By.name(elementoName)).sendKeys(Keys.BACK_SPACE);
 	}
 
 	/**
@@ -126,7 +149,8 @@ public class BaseDSL {
 	 * @param texto
 	 */
 	public void encontraClassEnviaTextoEnter(String className, String texto) {
-		escreveEClicaEnter(By.className(className), texto);
+		escreveTexto(By.className(className), texto);
+		getDriver().findElement(By.className(className)).sendKeys(Keys.ENTER);
 	}
 
 	/**
@@ -155,125 +179,310 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra na página da Web através de Id e reserva por Tag encontrada.
-	 * Exemplo: 'obterValorCampoAttribute("Id", "innerText")'
+	 * Encontra na página da Web através da Tag Id e reserva por Tag encontrada.
+	 * Exemplo: 'obterValorCampoAttributeId("elementoId", "innerText")'
 	 * 
 	 * @author lucas.casanova
-	 * @param id_campo
-	 * @return
 	 */
-	public String obterValorCampoAttribute(By by, String tag) {
-		return getDriver().findElement(by).getAttribute(tag);
+	public String obterValorCampoAttributeId(String elementoId, String tag) {
+		return getDriver().findElement(By.id(elementoId)).getAttribute(tag);
 	}
 
 	/**
-	 * Encontra na página da Web através de Id e reserva o texto encontrado.
-	 * Exemplo: 'obterCampoTexto("id")'
+	 * Encontra na página da Web através da Tag Name e reserva por Tag encontrada.
+	 * Exemplo: 'obterValorCampoAttributeName("elementoName", "innerText")'
 	 * 
 	 * @author lucas.casanova
-	 * @param by
-	 * @return
 	 */
-	public String obterCampoTexto(By by) {
-		return getDriver().findElement(by).getText();
+	public String obterValorCampoAttributeName(String elementoName, String tag) {
+		return getDriver().findElement(By.name(elementoName)).getAttribute(tag);
+	}
+
+	/**
+	 * Encontra na página da Web através da Classname e reserva por Tag encontrada.
+	 * Exemplo: 'obterValorCampoAttributeClassName("elementoClassName",
+	 * "innerText")'
+	 * 
+	 * @author lucas.casanova
+	 */
+	public String obterValorCampoAttributeClassName(String elementoClassName, String tag) {
+		return getDriver().findElement(By.className(elementoClassName)).getAttribute(tag);
+	}
+
+	/**
+	 * Retorna texto do elemento através da Tag Id e reserva o texto encontrado.
+	 * Exemplo: 'obterCampoTextoId("elementoId")'
+	 * 
+	 * @author lucas.casanova
+	 */
+	public String obterCampoTextoId(String elementoId) {
+		return getDriver().findElement(By.id(elementoId)).getText();
+	}
+
+	/**
+	 * Retorna texto do elemento através da Tag Name e reserva o texto encontrado.
+	 * Exemplo: 'obterCampoTextoName("elementoName")'
+	 * 
+	 * @author lucas.casanova
+	 */
+	public String obterCampoTextoName(String elementoName) {
+		return getDriver().findElement(By.name(elementoName)).getText();
+	}
+
+	/**
+	 * Retorna texto do elemento através da Tag ClassName e reserva o texto
+	 * encontrado. Exemplo: 'obterCampoTextoClassName("elementoId")'
+	 * 
+	 * @author lucas.casanova
+	 */
+	public String obterCampoTextoClassName(String elementoClassName) {
+		return getDriver().findElement(By.className(elementoClassName)).getText();
 	}
 
 	/**
 	 * Verifica se campo obrigatório foi preenchido corretamente. Exemplo:
-	 * 'checarCampoObrigatorio("texto" , "id")'
+	 * 'checarCampoObrigatorioId("texto" , "id")'
 	 * 
 	 * @author lucas.casanova
-	 * @param texto
-	 * @param by
 	 */
-	public void checarCampoObrigatorio(String texto, By by) {
-		Assert.assertEquals(texto, obterCampoTexto(by));
+	public void checarCampoObrigatorioId(String texto, String id) {
+		Assert.assertEquals(texto, obterCampoTextoId(id));
+	}
+
+	/**
+	 * Verifica se campo obrigatório foi preenchido corretamente. Exemplo:
+	 * 'checarCampoObrigatorioName("texto" , "name")'
+	 * 
+	 * @author lucas.casanova
+	 */
+	public void checarCampoObrigatorioName(String texto, String name) {
+		Assert.assertEquals(texto, obterCampoTextoName(name));
+	}
+
+	/**
+	 * Verifica se campo obrigatório foi preenchido corretamente. Exemplo:
+	 * 'checarCampoObrigatorioClassName("texto" , "className")'
+	 * 
+	 * @author lucas.casanova
+	 */
+	public void checarCampoObrigatorioClassName(String texto, String className) {
+		Assert.assertEquals(texto, obterCampoTextoClassName(className));
 	}
 
 	/******************** RADIO E CHECK ********************/
 
+	/**
+	 * Encontra elemento e confirma se está selecionado. Exemplo:
+	 * 'isElementoMarcadoId("Id")'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public Boolean isElementoMarcadoId(String id) {
+		return getDriver().findElement(By.id(id)).isSelected();
+	}
 
 	/**
 	 * Encontra elemento e confirma se está selecionado. Exemplo:
-	 * 'isElementoMarcado(By.Id("Id"))'
+	 * 'isElementoMarcadoName("name")'
 	 * 
 	 * @author guilherme.teixeira
-	 * @param by
-	 *            (utilizado para indicar a Tag)
-	 * @return Boolean
 	 */
-	public Boolean isElementoMarcado(By by) {
-		return getDriver().findElement(by).isSelected();
+	public Boolean isElementoMarcadoName(String name) {
+		return getDriver().findElement(By.name(name)).isSelected();
+	}
+
+	/**
+	 * Encontra elemento e confirma se está selecionado. Exemplo:
+	 * 'isElementoMarcado("className")'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public Boolean isElementoMarcadoClassName(String className) {
+		return getDriver().findElement(By.className(className)).isSelected();
 	}
 
 	/**
 	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
-	 * 'isCheckMarcadoComEspaco(By.Id("Id"))'
+	 * 'isCheckMarcadoComEspacoId("id")'
 	 * 
-	 * @param by
-	 *            (utilizado para indicar a Tag)
 	 * @author guilherme.teixeira
 	 */
-	public void isCheckMarcadoComEspaco(By by) {
-		getDriver().findElement(by).sendKeys(Keys.SPACE);
+	public void isCheckMarcadoComEspacoId(String id) {
+		getDriver().findElement(By.id(id)).sendKeys(Keys.SPACE);
+	}
+
+	/**
+	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
+	 * 'isCheckMarcadoComEspacoName("name")'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public void isCheckMarcadoComEspacoName(String name) {
+		getDriver().findElement(By.name(name)).sendKeys(Keys.SPACE);
+	}
+
+	/**
+	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
+	 * 'isCheckMarcadoComEspacoClassName("className)'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public void isCheckMarcadoComEspacoClassName(String className) {
+		getDriver().findElement(By.className(className)).sendKeys(Keys.SPACE);
 	}
 
 	/******************** COMBO ********************/
 
 	/**
 	 * Encontra campo Combo e seleciona elemento por texto deste Combo. Exemplo:
-	 * 'selecionarCombo("Id" , "TextoDoCombo")'
+	 * 'selecionarCombo("Id" , "texto")'
 	 * 
-	 * @param by
-	 * @param texto
 	 * @author guilherme.teixeira
 	 */
-	public void selecionarCombo(By by, String texto) {
-		WebElement elemento = getDriver().findElement(by);
+	public void selecionarComboId(String id, String texto) {
+		WebElement elemento = getDriver().findElement(By.id(id));
 		Select combo = new Select(elemento);
 		combo.selectByVisibleText(texto);
 	}
 
 	/**
-	 * Encontra campo Combo por Id e retira a seleção do elemento deste Combo.
-	 * Exemplo: 'deselecionarCombo("Id" , "TextoDoCombo")'
+	 * Encontra campo Combo e seleciona elemento por texto deste Combo. Exemplo:
+	 * 'selecionarComboName("name" , "texto")'
 	 * 
-	 * @param by
-	 * @param valor
 	 * @author guilherme.teixeira
 	 */
-	public void deselecionarCombo(By by, String valor) {
-		WebElement elemento = getDriver().findElement(by);
+	public void selecionarComboName(String name, String texto) {
+		WebElement elemento = getDriver().findElement(By.name(name));
+		Select combo = new Select(elemento);
+		combo.selectByVisibleText(texto);
+	}
+
+	/**
+	 * Encontra campo Combo e seleciona elemento por texto deste Combo. Exemplo:
+	 * 'selecionarComboClassName("className" , "TextoDoCombo")'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public void selecionarComboClassName(String className, String texto) {
+		WebElement elemento = getDriver().findElement(By.className(className));
+		Select combo = new Select(elemento);
+		combo.selectByVisibleText(texto);
+	}
+
+	/**
+	 * Encontra campo Combo por Tag Id e retira a seleção do elemento deste Combo.
+	 * Exemplo: 'deselecionarComboId("id" , "TextoDoCombo")'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public void deselecionarComboId(String id, String valor) {
+		WebElement elemento = getDriver().findElement(By.id(id));
 		Select combo = new Select(elemento);
 		combo.deselectByVisibleText(valor);
 	}
 
-	/******************** BOT�O ********************/
+	/**
+	 * Encontra campo Combo por Tag Name e retira a seleção do elemento deste Combo.
+	 * Exemplo: 'deselecionarComboName("name" , "TextoDoCombo")'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public void deselecionarComboName(String name, String valor) {
+		WebElement elemento = getDriver().findElement(By.name(name));
+		Select combo = new Select(elemento);
+		combo.deselectByVisibleText(valor);
+	}
+
+	/**
+	 * Encontra campo Combo por Tag ClassName e retira a seleção do elemento deste
+	 * Combo. Exemplo: 'deselecionarComboClassName("className" , "TextoDoCombo")'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public void deselecionarComboClassName(String className, String valor) {
+		WebElement elemento = getDriver().findElement(By.className(className));
+		Select combo = new Select(elemento);
+		combo.deselectByVisibleText(valor);
+	}
+
+	/******************** BOTÃO ********************/
 
 	/**
 	 * Encontra elemento pela indicação solicitada e clica.
 	 * 
-	 * @param by
-	 *            (utilizado para indicar a Tag) É necessário indicar a TAG
-	 *            referente. Exemplo: 'clicaElemento(By.Id("Id"))'
 	 * @author guilherme.teixeira
 	 */
-	public void clicaElemento(By by) {
-		getDriver().findElement(by).click();
+	public void clicaElementoId(String id) {
+		getDriver().findElement(By.id(id)).click();
+	}
+
+	/**
+	 * Encontra elemento pela indicação solicitada e clica.
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public void clicaElementoName(String name) {
+		getDriver().findElement(By.name(name)).click();
+	}
+
+	/**
+	 * Encontra elemento pela indicação solicitada e clica.
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public void clicaElementoLink(String linkText) {
+		getDriver().findElement(By.linkText(linkText)).click();
+	}
+
+	/**
+	 * Encontra elemento pela indicação solicitada e clica.
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public void clicaElementoClassName(String className) {
+		getDriver().findElement(By.className(className)).click();
+	}
+
+	/**
+	 * Encontra elemento pela indicação solicitada e clica.
+	 * 
+	 * @param xpath
+	 */
+	public void clicaElementoXPath(String xpath) {
+		getDriver().findElement(By.xpath("xpath"));
 	}
 
 	/******************** TEXTOS ********************/
 
 	/**
 	 * Encontra elemento Text por indicação selecionada e reserva texto encontrado.
-	 * � necessário indicar a TAG referente. Exemplo: 'obterTexto(By.Id("Id"))'
+	 * É necessário indicar a TAG referente. Exemplo: 'obterTextoId("id")'
 	 * 
-	 * @param by
-	 * @param valor
 	 * @author guilherme.teixeira
 	 */
-	public String obterTexto(By by) {
-		return getDriver().findElement(by).getText();
+	public String obterTextoId(String id) {
+		return getDriver().findElement(By.id(id)).getText();
+	}
+
+	/**
+	 * Encontra elemento Text por indicação selecionada e reserva texto encontrado.
+	 * É necessário indicar a TAG referente. Exemplo: 'obterTextoName("name")'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public String obterTextoName(String name) {
+		return getDriver().findElement(By.name(name)).getText();
+	}
+
+	/**
+	 * Encontra elemento Text por indicação selecionada e reserva texto encontrado.
+	 * É necessário indicar a TAG referente. Exemplo:
+	 * 'obterTextoClassName("className")'
+	 * 
+	 * @author guilherme.teixeira
+	 */
+	public String obterTextoClassName(String className) {
+		return getDriver().findElement(By.className(className)).getText();
 	}
 
 	/******************** ALERTS ********************/
@@ -282,8 +491,6 @@ public class BaseDSL {
 	 * Desvia a atenção para um Alert obtém texto. Aceita Alert e retorna texto
 	 * deste Alert. Exemplo: 'alertaObterTextoEAceita()'
 	 * 
-	 * @param by
-	 * @param valor
 	 * @author guilherme.teixeira
 	 */
 	public String alertaObterTextoEAceita() {
@@ -297,8 +504,6 @@ public class BaseDSL {
 	 * Desvia a atenção para um Alert obtém texto. Rejeita Alert e retorna texto
 	 * deste Alert. Exemplo: 'alertaObterTextoENega()'
 	 * 
-	 * @param by
-	 * @param valor
 	 * @author guilherme.teixeira
 	 */
 	public String AlertaObterTextoENega() {
@@ -312,8 +517,6 @@ public class BaseDSL {
 	 * Desvia a atenção para um Alert escreve texto indicado e aceita Alert.
 	 * Exemplo: 'alertaEscrever("Texto")'
 	 * 
-	 * @param by
-	 * @param valor
 	 * @author guilherme.teixeira
 	 */
 	public void alertaEscrever(String texto) {
@@ -325,11 +528,9 @@ public class BaseDSL {
 	/******************* FRAMES E JANELAS *******************/
 
 	/**
-	 * Desvia a atenção para um Frame por Id indicado e entra. Exemplo:
-	 * 'entrarFrame("Id")'
+	 * Desvia a atenção para um Frame por Tag indicada e entra. Exemplo:
+	 * 'entrarFrame("elemento")'
 	 * 
-	 * @param by
-	 * @param valor
 	 * @author guilherme.teixeira
 	 */
 	public void entrarFrame(String elemento) {
@@ -569,7 +770,6 @@ public class BaseDSL {
 	 * 
 	 */
 	public void executarTerminal(String comando) throws IOException {
-		
-		
+
 	}
 }
