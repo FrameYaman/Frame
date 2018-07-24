@@ -1,43 +1,17 @@
 package suporte;
-
-import java.awt.Robot;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.Closeable;
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Random;
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
-
-import javax.imageio.ImageIO;
-
 import static suporte.Runner.getDriver;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
-import org.junit.rules.TestName;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.Rectangle;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class BaseDSL {
@@ -226,7 +200,7 @@ public class BaseDSL {
 	 *            referente. Exemplo: 'common(By.Id("Id"))'
 	 * @author guilherme.teixeira
 	 */
-	public void common(By by) {
+	public void clicaElemento(By by) {
 		getDriver().findElement(by).click();
 	}
 
