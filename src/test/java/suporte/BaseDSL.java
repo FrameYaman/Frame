@@ -4,15 +4,20 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
@@ -79,28 +84,23 @@ public class BaseDSL {
 	public void saida() {
 		getDriver().quit();
 	}
-	
+
 	/**
 	 * Tirar Screenshot
 	 * 
 	 * @author felipe.lourenco
 	 */
-	public void TakeScreenShot() {
-		int i = 1;
-		File file = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
-		try {
-			while(//definir parametro) {
-			FileUtils.copyFile(file, new File("FrameYaman\\Evidencias\\Screenshot" + i + ".png"));
-			i = i + 1;
-			}
-		}catch(
-
-	IOException e)
-	{
-		e.printStackTrace();
-	}
-
-	}
+	/*
+	 * public void TakeScreenShot() { int i = 1; File file =
+	 * ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE); try {
+	 * while(//definir parametro) { FileUtils.copyFile(file, new
+	 * File("FrameYaman\\Evidencias\\Screenshot" + i + ".png")); i = i + 1; }
+	 * }catch(
+	 * 
+	 * IOException e) { e.printStackTrace(); }
+	 * 
+	 * }
+	 */
 
 	/******************** TEXTFIELD E TEXTAREA ********************/
 
@@ -110,8 +110,10 @@ public class BaseDSL {
 	 * 'escreveTexto(By.id("Id") , "texto")'
 	 * 
 	 * @author lucas.casanova
-	 * @param by    (utilizado para indicar a Tag)
-	 * @param texto (utilizado para indicar o texto)
+	 * @param by
+	 *            (utilizado para indicar a Tag)
+	 * @param texto
+	 *            (utilizado para indicar o texto)
 	 */
 	public void escreveTexto(By by, String texto) {
 		getDriver().findElement(by).clear();
@@ -123,8 +125,10 @@ public class BaseDSL {
 	 * Exemplo: 'encontraNameEscreveTexto("Name" , "texto")'
 	 * 
 	 * @author lucas.casanova
-	 * @param name  (utilizado para indicar TAG name)
-	 * @param texto (utilizado para indicar o texto)
+	 * @param name
+	 *            (utilizado para indicar TAG name)
+	 * @param texto
+	 *            (utilizado para indicar o texto)
 	 */
 	public void encontraNameEscreveTexto(String name, String texto) {
 		escreveTexto(By.name(name), texto);
@@ -233,8 +237,9 @@ public class BaseDSL {
 	/**
 	 * Encontra elemento pela indicação solicitada e clica.
 	 * 
-	 * @param by (utilizado para indicar a Tag) É necessário indicar a TAG
-	 *           referente. Exemplo: 'common(By.Id("Id"))'
+	 * @param by
+	 *            (utilizado para indicar a Tag) É necessário indicar a TAG
+	 *            referente. Exemplo: 'common(By.Id("Id"))'
 	 * @author guilherme.teixeira
 	 */
 	public void common(By by) {
@@ -246,7 +251,8 @@ public class BaseDSL {
 	 * 'isElementoMarcado(By.Id("Id"))'
 	 * 
 	 * @author guilherme.teixeira
-	 * @param by (utilizado para indicar a Tag)
+	 * @param by
+	 *            (utilizado para indicar a Tag)
 	 * @return Boolean
 	 */
 	public Boolean isElementoMarcado(By by) {
@@ -257,7 +263,8 @@ public class BaseDSL {
 	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
 	 * 'isCheckMarcadoComEspaco(By.Id("Id"))'
 	 * 
-	 * @param by (utilizado para indicar a Tag)
+	 * @param by
+	 *            (utilizado para indicar a Tag)
 	 * @author guilherme.teixeira
 	 */
 	public void isCheckMarcadoComEspaco(By by) {
@@ -576,8 +583,8 @@ public class BaseDSL {
 	 * 
 	 */
 
-	public void shell(String comando) {
-		
+	public void executarPromtWindows(String comando) {
+
 		String ping = comando;
 
 		String[] cmds = { ping };
@@ -605,4 +612,15 @@ public class BaseDSL {
 		}
 	}
 
+	/**
+	 * Meto onde podera ser usado para executar comandos no terminal (Linux/Apple)
+	 * 
+	 * @author joaofranco
+	 * @throws IOException
+	 * 
+	 */
+	public void executarTerminal(String comando) throws IOException {
+		
+		
+	}
 }
