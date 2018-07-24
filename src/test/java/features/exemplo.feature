@@ -11,7 +11,7 @@ Funcionalidade: Visitar o site com sucesso
 @exemplo_01
 Cenário: Deve navegar no site com sucesso
 	Quando apresentar a página inicial
-	Então o menu <menu> será visualizado com sucesso
+	Então o menu "<menu>" será visualizado com sucesso
 	
 @exemplo_02
 Cenário: Deve validar contato com sucesso
