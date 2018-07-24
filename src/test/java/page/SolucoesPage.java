@@ -9,7 +9,7 @@ public class SolucoesPage {
 	BaseDSL baseDSL = new BaseDSL();
 	
 	public void menuSolucoes() {
-		baseDSL.commonClicar(By.linkText("SOLUÇÕES"));
+		baseDSL.clicaElemento(By.linkText("SOLUÇÕES"));
 	}
 
 }
