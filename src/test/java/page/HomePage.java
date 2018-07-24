@@ -5,11 +5,14 @@ import suporte.BaseDSL;
 public class HomePage {
 
 	BaseDSL baseDSL = new BaseDSL();
+	MenuPage menu = new MenuPage();
 
 	/*********** INÍCIO NAVEGAÇÃO **********/
+	
 	public void inicia() {
 		baseDSL.url("http://www.yaman.com.br");
-	}
+		menu.home();
+	}	
 
 	/********** BARRA DE PESQUISA **********/
 

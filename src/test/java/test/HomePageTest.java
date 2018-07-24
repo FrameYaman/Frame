@@ -14,4 +14,10 @@ public class HomePageTest {
 		page.clicaPerformaceEDisponibilidade();
 		page.finaliza();
 	}
+	
+	
+	@Test
+	public void testeAberturaPage() {
+		page.inicia();
+	}
 }
