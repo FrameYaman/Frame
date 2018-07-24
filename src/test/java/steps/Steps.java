@@ -5,7 +5,7 @@ import cucumber.api.java.es.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
-public class steps {
+public class Steps {
 	
 	@Dado("^que estou no site \"([^\"]*)\"$")
 	public void que_estou_no_site(String arg1) throws Throwable {
