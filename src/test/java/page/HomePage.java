@@ -13,34 +13,26 @@ public class HomePage {
 
 	/********** BARRA DE PESQUISA **********/
 
-	public void lupaPesquisa() {
-		baseDSL.clicaElementoName("fa fa-search");
+	public void clicaPesquisa() {
+		baseDSL.clicaElementoClassName("fa fa-search");
 	}
 
-	public void barraPesquisa(String texto) {
-		baseDSL.escreveId("s", texto);
+	public void escreveBarraPesquisa(String texto) {
+		baseDSL.escreveTextoIdEClicaEnter("s", texto);
 	}
 
 	public void fecharBarraPesquisa() {
-		baseDSL.clicaElementoName("search-off");
-	}
-
-	/*********** MENU **********/
-
-	public void menuHome() {
-		baseDSL.clicaElementoLink("HOME");
+		baseDSL.clicaElementoClassName("search-off");
 	}
 
 	/*********** BOXS INTERATIVOS **********/
 
 	public void clicaPerformaceEDisponibilidade() {
-		baseDSL.clicaElementoXPath(
-				"//div[@id='content-box-1']/div[1]//a[@href='http://yaman.com.br/performance-disponibilidade/']");
+		baseDSL.clicaElementoXPath("//div[@id='content-box-1']/div[1]//a[@href='http://yaman.com.br/performance-disponibilidade/']");
 	}
 
 	public void clicaSegurancaDeAplicacoes() {
-		baseDSL.clicaElementoXPath(
-				"//div[@id='content-box-1']/div[2]//a[@href='http://yaman.com.br/seguranca-de-aplicacoes/']");
+		baseDSL.clicaElementoXPath("//div[@id='content-box-1']/div[2]//a[@href='http://yaman.com.br/seguranca-de-aplicacoes/']");
 	}
 
 	public void clicaQaTestes() {
