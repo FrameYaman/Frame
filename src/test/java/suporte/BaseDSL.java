@@ -192,17 +192,6 @@ public class BaseDSL {
 
 	/******************** RADIO E CHECK ********************/
 
-	/**
-	 * Encontra elemento pela indicação solicitada e clica.
-	 * 
-	 * @param by
-	 *            (utilizado para indicar a Tag) É necessário indicar a TAG
-	 *            referente. Exemplo: 'common(By.Id("Id"))'
-	 * @author guilherme.teixeira
-	 */
-	public void clicaElemento(By by) {
-		getDriver().findElement(by).click();
-	}
 
 	/**
 	 * Encontra elemento e confirma se está selecionado. Exemplo:
@@ -262,12 +251,14 @@ public class BaseDSL {
 	/******************** BOT�O ********************/
 
 	/**
-	 * Encontra elemento Bot�o por indicação selecionada e clica. É necessário
-	 * indicar a TAG referente. Exemplo: 'commonClicar(By.Id("Id"))'
+	 * Encontra elemento pela indicação solicitada e clica.
 	 * 
 	 * @param by
+	 *            (utilizado para indicar a Tag) É necessário indicar a TAG
+	 *            referente. Exemplo: 'clicaElemento(By.Id("Id"))'
+	 * @author guilherme.teixeira
 	 */
-	public void commonClicar(By by) {
+	public void clicaElemento(By by) {
 		getDriver().findElement(by).click();
 	}
 
