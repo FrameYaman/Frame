@@ -24,7 +24,7 @@ public class Hooks {
 		TakesScreenshot ss = (TakesScreenshot) getDriver();
 		File arquivo = ss.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(arquivo, new File("target" + File.separator + "screenshot" +
-				File.separator + testName.getMethodName() + ".jpg"));
+				File.separator + testName.getMethodName() + ".png"));
 		
 		if(Propriedades.FECHAR_BROWSER) {
 			fecharDriver();
