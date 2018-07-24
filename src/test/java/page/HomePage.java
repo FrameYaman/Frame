@@ -5,58 +5,56 @@ import org.openqa.selenium.By;
 import suporte.BaseDSL;
 
 public class HomePage {
-	
+
 	BaseDSL baseDSL = new BaseDSL();
-	
-/*********** INÍCIO NAVEGAÇÃO **********/	
+
+	/*********** INÍCIO NAVEGAÇÃO **********/
 	public void inicia() {
 		baseDSL.url("http://www.yaman.com.br");
 	}
-	
-/********** BARRA DE PESQUISA **********/	
-	
+
+	/********** BARRA DE PESQUISA **********/
+
 	public void lupaPesquisa() {
-		baseDSL.common(By.className("fa fa-search"));	
+		baseDSL.commonClicar(By.className("fa fa-search"));
 	}
-	
+
 	public void barraPesquisa(String texto) {
 		baseDSL.escreveEClicaEnter(By.id("s"), texto);
 	}
-	
+
 	public void fecharBarraPesquisa() {
-		baseDSL.common(By.className("search-off"));
-	}
-		
-/*********** MENU **********/
-	
-	public void menuHome() {
-		baseDSL.common(By.linkText("HOME"));
+		baseDSL.commonClicar(By.className("search-off"));
 	}
 
-/*********** BOXS INTERATIVOS **********/
-	
+	/*********** MENU **********/
+
+	public void menuHome() {
+		baseDSL.commonClicar(By.linkText("HOME"));
+	}
+
+	/*********** BOXS INTERATIVOS **********/
+
 	public void clicaPerformaceEDisponibilidade() {
-		baseDSL.common(By.xpath("//div[@id='content-box-1']/div[1]//a[@href='http://yaman.com.br/performance-disponibilidade/']"));
+		baseDSL.commonClicar(By.xpath(
+				"//div[@id='content-box-1']/div[1]//a[@href='http://yaman.com.br/performance-disponibilidade/']"));
 	}
-	
+
 	public void clicaSegurancaDeAplicacoes() {
-		baseDSL.common(By.xpath("//div[@id='content-box-1']/div[2]//a[@href='http://yaman.com.br/seguranca-de-aplicacoes/']"));
+		baseDSL.commonClicar(
+				By.xpath("//div[@id='content-box-1']/div[2]//a[@href='http://yaman.com.br/seguranca-de-aplicacoes/']"));
 	}
-	
+
 	public void clicaQaTestes() {
-		baseDSL.common(By.xpath("//div[@id='content-box-1']/div[3]//a[@href='http://yaman.com.br/qa-testes/']"));
+		baseDSL.commonClicar(By.xpath("//div[@id='content-box-1']/div[3]//a[@href='http://yaman.com.br/qa-testes/']"));
 	}
-	
+
 	public void clicaPerDevOps() {
-		baseDSL.common(By.xpath("//div[@id='content-box-1']/div[4]//a[@href='http://yaman.com.br/devops/']"));
+		baseDSL.commonClicar(By.xpath("//div[@id='content-box-1']/div[4]//a[@href='http://yaman.com.br/devops/']"));
 	}
-	
-/********** FIM *********/
+
+	/********** FIM *********/
 	public void finaliza() {
 		baseDSL.saida();
 	}
 }
-
-
-
-
