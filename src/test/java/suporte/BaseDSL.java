@@ -84,24 +84,8 @@ public class BaseDSL {
 	public void saida() {
 		getDriver().quit();
 	}
-
-	/**
-	 * Tirar Screenshot
-	 * 
-	 * @author felipe.lourenco
-	 */
-	/*
-	 * public void TakeScreenShot() { int i = 1; File file =
-	 * ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE); try {
-	 * while(//definir parametro) { FileUtils.copyFile(file, new
-	 * File("FrameYaman\\Evidencias\\Screenshot" + i + ".png")); i = i + 1; }
-	 * }catch(
-	 * 
-	 * IOException e) { e.printStackTrace(); }
-	 * 
-	 * }
-	 */
-
+	
+	
 	/******************** TEXTFIELD E TEXTAREA ********************/
 
 	/**
