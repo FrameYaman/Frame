@@ -19,12 +19,12 @@ public class Steps {
 	public void o_menu_menu_será_visualizado_com_sucesso() throws Throwable {
 	}
 
-	@Dado("^clico no menu <menu>$")
-	public void clico_no_menu_menu() throws Throwable {
+	@Dado("^clico no menu \"([^\"]*)\"$")
+	public void clico_no_menu(String arg1) throws Throwable {
 	}
 
-	@Quando("^cerregar a página \"([^\"]*)\"$")
-	public void cerregar_a_página(String arg1) throws Throwable {
+	@Quando("^carregar a página \"([^\"]*)\"$")
+	public void carregar_a_página(String arg1) throws Throwable {
 	}
 
 	@Quando("^preencher o cadastro de contato$")
