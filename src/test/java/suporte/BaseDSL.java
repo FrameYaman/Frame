@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import static suporte.Runner.getDriver;
 
@@ -769,7 +770,12 @@ public class BaseDSL {
 	 * @throws IOException
 	 * 
 	 */
-	public void executarTerminal(String comando) throws IOException {
+	public void executarTerminal() throws IOException {
+		Runtime r = Runtime.getRuntime();
+        Process p = r.exec(new String[]{"/bin/sh", "-c", "ifconfig | grep 'inet ' | awk '{print $2}' | sed 's/addr://'"   });
+        Scanner scanner = new Scanner(p.getInputStream());
+        String resultado = scanner.next();
 
+        System.out.print(resultado);
 	}
 }
