@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import page.ContatoPage;
 
-public class ContatoTest {
+public class ContatoTest{
 	
 	ContatoPage page = new ContatoPage();
 	
@@ -14,6 +14,7 @@ public class ContatoTest {
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+		
 	}
 	
 	@Test

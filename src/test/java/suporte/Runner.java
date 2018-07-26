@@ -16,15 +16,13 @@ import suporte.Propriedades.TipoExecucao;
 
 public class Runner {
 
-	private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<WebDriver>() {
+	public static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<WebDriver>() {
 		@Override
 		protected synchronized WebDriver initialValue() {
 			return initDriver();
 		}
 	};
-	
-	private Runner() {}
-	
+		
 	public static WebDriver getDriver() {
 		return threadDriver.get();
 	}
@@ -55,17 +53,5 @@ public class Runner {
 		driver.manage().window().setSize(new Dimension(1200, 765));			
 		return driver;
 	}
-
-	public static void fecharDriver() {
-		WebDriver driver = initDriver();
-		if (driver != null) {
-			driver.quit();
-			driver = null;
-		}
-		if (threadDriver != null) {
-			threadDriver.remove();
-		}
-	}
-
 } 
  

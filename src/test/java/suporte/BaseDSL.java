@@ -17,6 +17,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class BaseDSL {
+	
+	
 
 	/******************** INTERÇÕES NAVEGADOR ********************/
 
@@ -51,12 +53,7 @@ public class BaseDSL {
 	public void esperaCarregar(int tempo) {
 		getDriver().manage().timeouts().implicitlyWait(tempo, TimeUnit.SECONDS);
 	}
-
-	/**
-	 * Saída / Finalização do sistema
-	 * 
-	 * @author lucas.casanova
-	 */
+	
 	public void saida() {
 		getDriver().quit();
 	}
