@@ -3,8 +3,10 @@ package test;
 import org.junit.Test;
 
 import page.ContatoPage;
+import suporte.Hooks;
+import suporte.Operations;
 
-public class ContatoTest{
+public class ContatoTest extends Hooks{
 	
 	ContatoPage page = new ContatoPage();
 	
@@ -14,6 +16,7 @@ public class ContatoTest{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+		page.clicaBotaoEnviar();
 		
 	}
 	

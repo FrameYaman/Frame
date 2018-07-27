@@ -32,7 +32,7 @@ public class ContatoPage {
 	/*********** BOTÃO **********/
 	
 	public void clicaBotaoEnviar() {
-		baseDSL.clicaElementoLink("Enviar"); 
+		baseDSL.clicaElementoClassName("wpcf7-form-control wpcf7-submit");
 	}
 
 }
