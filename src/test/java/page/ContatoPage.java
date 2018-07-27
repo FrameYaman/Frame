@@ -34,5 +34,9 @@ public class ContatoPage {
 	public void clicaBotaoEnviar() {
 		baseDSL.clicaElementoClassName("wpcf7-form-control wpcf7-submit");
 	}
+	
+	public void finaliza() {
+		baseDSL.saida();
+	}
 
 }

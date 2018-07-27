@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import page.ContatoPage;
 import suporte.Hooks;
-import suporte.Operations;
+//import suporte.Operations;
 
 public class ContatoTest extends Hooks{
 	
@@ -16,18 +16,18 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-		page.clicaBotaoEnviar();
-		
+//		page.finaliza();
 	}
 	
 	@Test
 	public void testeEnvioVazio() {
 		page.inicia();
-		page.clicaBotaoEnviar();
+//		page.finaliza();
 	}
 	
 	@Test
 	public void testeAberturaPage() {
 		page.inicia();
+//		page.finaliza();
 	}
 }

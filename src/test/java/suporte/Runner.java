@@ -46,12 +46,23 @@ public class Runner {
 			try {
 				driver = new RemoteWebDriver(new URL("http://172.16.34.131:4444/wd/hub"), cap);
 			} catch (MalformedURLException e) {
-				System.err.println("Falha na conexÃ£o com o GRID");
+				System.err.println("Falha na conexão com o GRID");
 				e.printStackTrace();
 			}
 		}
 		driver.manage().window().setSize(new Dimension(1200, 765));			
 		return driver;
+	}
+	
+	public static void fecharDriver() {
+		WebDriver driver = initDriver();
+		if (driver != null) {
+			driver.quit();
+			driver = null;
+		}
+		if (threadDriver != null) {
+			threadDriver.remove();
+		}
 	}
 } 
  

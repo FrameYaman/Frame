@@ -1,7 +1,7 @@
 package suporte;
 
 import static suporte.Runner.getDriver;
-import static suporte.DriverFactory.fecharDriver;
+import static suporte.Runner.fecharDriver;
 import java.io.File;
 import java.io.IOException;
 
