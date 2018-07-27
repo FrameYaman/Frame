@@ -55,7 +55,7 @@ public class Runner {
 	}
 	
 	public static void fecharDriver() {
-		WebDriver driver = initDriver();
+		WebDriver driver = getDriver();
 		if (driver != null) {
 			driver.quit();
 			driver = null;

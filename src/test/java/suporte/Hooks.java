@@ -18,7 +18,7 @@ public class Hooks {
 	
 	@Rule
 	public TestName testName = new TestName();
-	
+
 	@After
 	public void finaliza() throws IOException{
 		TakesScreenshot ss = (TakesScreenshot) getDriver();

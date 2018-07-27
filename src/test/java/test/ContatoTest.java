@@ -18,6 +18,70 @@ public class ContatoTest extends Hooks{
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
 //		page.finaliza();
 	}
+	@Test
+	public void testeEnvioContato22() {
+		page.inicia();
+		page.escreveSeuEmail("exemplo.email@email.com");
+		page.escreveAssunto("Yaman");
+		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+//		page.finaliza();
+	}
+	@Test
+	public void testeEnvioContato11() {
+		page.inicia();
+		page.escreveSeuEmail("exemplo.email@email.com");
+		page.escreveAssunto("Yaman");
+		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+//		page.finaliza();
+	}
+	@Test
+	public void testeEnvioContato1() {
+		page.inicia();
+		page.escreveSeuEmail("exemplo.email@email.com");
+		page.escreveAssunto("Yaman");
+		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+//		page.finaliza();
+	}
+	@Test
+	public void testeEnvioContato2() {
+		page.inicia();
+		page.escreveSeuEmail("exemplo.email@email.com");
+		page.escreveAssunto("Yaman");
+		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+//		page.finaliza();
+	}
+	@Test
+	public void testeEnvioContato3() {
+		page.inicia();
+		page.escreveSeuEmail("exemplo.email@email.com");
+		page.escreveAssunto("Yaman");
+		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+//		page.finaliza();
+	}
+	@Test
+	public void testeEnvioContato4() {
+		page.inicia();
+		page.escreveSeuEmail("exemplo.email@email.com");
+		page.escreveAssunto("Yaman");
+		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+//		page.finaliza();
+	}
+	@Test
+	public void testeEnvioContato5() {
+		page.inicia();
+		page.escreveSeuEmail("exemplo.email@email.com");
+		page.escreveAssunto("Yaman");
+		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+//		page.finaliza();
+	}
+	@Test
+	public void testeEnvioContato6() {
+		page.inicia();
+		page.escreveSeuEmail("exemplo.email@email.com");
+		page.escreveAssunto("Yaman");
+		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+//		page.finaliza();
+	}
 	
 	@Test
 	public void testeEnvioVazio() {
