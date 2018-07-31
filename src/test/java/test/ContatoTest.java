@@ -16,7 +16,6 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-//		page.finaliza();
 	}
 	@Test
 	public void testeEnvioContato22() {
@@ -24,7 +23,6 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-//		page.finaliza();
 	}
 	@Test
 	public void testeEnvioContato11() {
@@ -32,7 +30,6 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-//		page.finaliza();
 	}
 	@Test
 	public void testeEnvioContato1() {
@@ -40,7 +37,6 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-//		page.finaliza();
 	}
 	@Test
 	public void testeEnvioContato2() {
@@ -48,7 +44,6 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-//		page.finaliza();
 	}
 	@Test
 	public void testeEnvioContato3() {
@@ -56,7 +51,6 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-//		page.finaliza();
 	}
 	@Test
 	public void testeEnvioContato4() {
@@ -64,7 +58,6 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-//		page.finaliza();
 	}
 	@Test
 	public void testeEnvioContato5() {
@@ -72,7 +65,6 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-//		page.finaliza();
 	}
 	@Test
 	public void testeEnvioContato6() {
@@ -80,18 +72,15 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
-//		page.finaliza();
 	}
 	
 	@Test
 	public void testeEnvioVazio() {
 		page.inicia();
-//		page.finaliza();
 	}
 	
 	@Test
 	public void testeAberturaPage() {
 		page.inicia();
-//		page.finaliza();
 	}
 }

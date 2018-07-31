@@ -4,7 +4,7 @@
   <artifactId>teste.cucumber.br</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-  <build>
+ <build>
   	<testSourceDirectory>src</testSourceDirectory>
   	<plugins>
   		<plugin>
@@ -13,7 +13,7 @@
   			<version>2.18.1</version>
   			<configuration>
   				<includes>
-  					<include>test*.java</include>
+  					<include>test/*.java</include>
   				</includes>
   				<parallel>all</parallel>
   				<threadCount>2</threadCount>
@@ -22,11 +22,16 @@
   	</plugins>
   </build>
   
+  <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
+  
   <dependencies>  
 		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
 		    <artifactId>selenium-java</artifactId>
-		    <version>3.12.0</version>
+		    <version>3.13.0</version>
 		</dependency>  
 		<dependency>
 		    <groupId>junit</groupId>
