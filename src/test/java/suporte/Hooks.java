@@ -11,24 +11,29 @@ import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import suporte.Propriedades;
 
 public class Hooks {
-	
+
+
 	@Rule
 	public TestName testName = new TestName();
 
 	@After
-	public void finaliza() throws IOException{
+	public void finaliza() throws IOException {
 		TakesScreenshot ss = (TakesScreenshot) getDriver();
 		File arquivo = ss.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(arquivo, new File("target" + File.separator + "screenshot" +
-				File.separator + testName.getMethodName() + ".png"));
-		
-		if(Propriedades.FECHAR_BROWSER) {
+		FileUtils.copyFile(arquivo, new File(
+				"target" + File.separator + "screenshot" + File.separator + testName.getMethodName() + ".png"));
+
+		if (Propriedades.FECHAR_BROWSER) {
 			fecharDriver();
 		}
 	}
+	
 
 }
