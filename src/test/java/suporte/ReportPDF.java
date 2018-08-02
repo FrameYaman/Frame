@@ -17,7 +17,7 @@ import java.io.IOException;
 public class ReportPDF {
 	
 	 
-	    public static final String DEST = "target/screenshot/guilherme_gay.pdf";
+	    public static final String DEST = "target/screenshot/hello_world.pdf";
 	 
 	    public static void main(String args[]) throws IOException {
 	        File file = new File(DEST);
@@ -36,7 +36,7 @@ public class ReportPDF {
 	        Document document = new Document(pdf);
 	 
 	        //Add paragraph to the document
-	        document.add(new Paragraph("Guilerme Gay!"));
+	        document.add(new Paragraph("Hello World!"));
 	 
 	        //Close document
 	        document.close();

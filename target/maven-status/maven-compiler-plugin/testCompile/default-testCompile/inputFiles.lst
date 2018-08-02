@@ -1,14 +1,12 @@
-<<<<<<< Updated upstream
-C:\Users\joao.celino\git\FrameYaman\src\test\java\test\HomePageTest.java
-C:\Users\joao.celino\git\FrameYaman\src\test\java\page\HomePage.java
-C:\Users\joao.celino\git\FrameYaman\src\test\java\suporte\BaseDSL.java
-C:\Users\joao.celino\git\FrameYaman\src\test\java\suporte\Runner.java
-C:\Users\joao.celino\git\FrameYaman\src\test\java\page\SolucoesPage.java
-=======
-C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\suporte\Propriedades.java
-C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\suporte\Runner.java
-C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\page\SolucoesPage.java
-C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\page\HomePage.java
-C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\suporte\BaseDSL.java
-C:\Users\guilherme.teixeira\git\FrameYaman\src\test\java\test\HomePageTest.java
->>>>>>> Stashed changes
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\page\MenuPage.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\suporte\ReportPDF.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\test\ContatoTest.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\steps\Steps.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\page\HomePage.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\suporte\ReportHTML.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\suporte\Runner.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\page\ContatoPage.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\suporte\Hooks.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\page\SolucoesPage.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\suporte\BaseDSL.java
+C:\Users\lucas.casanova\eclipse-workspace\Frame\src\test\java\suporte\Propriedades.java
