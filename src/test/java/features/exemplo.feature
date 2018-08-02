@@ -9,18 +9,18 @@ Funcionalidade: Visitar o site com sucesso
 	Dado que estou no site "Yaman"
 	
 @exemplo_01
-Esquema do Cenário: Deve navegar no site com sucesso
-	Quando apresentar a página inicial
-	Então o menu "<menu>" será visualizado com sucesso
+Esquema do Cenario: Deve navegar no site com sucesso
+	Quando apresentar a pagina inicial
+	Entao o menu "<menu>" seria visualizado com sucesso
 	
 @exemplo_02
-Esquema do Cenário: Deve validar contato com sucesso
+Esquema do Cenario: Deve validar contato com sucesso
 	E clico no menu "<menu>"
-	Quando carregar a página "<pagina>"
+	Quando carregar a pagina "<pagina>"
 	E preencher o cadastro de contato
-	Então deverá enviar contato com sucesso
+	Entao deveria enviar contato com sucesso
 		
 Exemplos:
 | menu    | pagina   |
 | Home    | Contato  |
-| Contato | Soluções |
+| Contato | Solucoes |
