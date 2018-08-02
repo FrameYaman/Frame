@@ -14,7 +14,7 @@ Esquema do Cenario: Deve navegar no site com sucesso
 	Entao o menu "<menu>" seria visualizado com sucesso
 	
 @exemplo_02
-Esquema do Cenario: Deve validar contato com sucesso
+Esquema do Cenario: deve validar contato com sucesso
 	E clico no menu "<menu>"
 	Quando carregar a pagina "<pagina>"
 	E preencher o cadastro de contato
