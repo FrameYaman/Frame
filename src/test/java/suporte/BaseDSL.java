@@ -3,8 +3,12 @@ package suporte;
 import static suporte.Runner.getDriver;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -16,6 +20,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 public class BaseDSL {
 	
@@ -776,4 +783,14 @@ public class BaseDSL {
 
         System.out.print(resultado);
 	}
+	
+	// Objeto Json
+		public static JsonObject ReadJsonFile(String file) throws FileNotFoundException {
+
+			Gson gson = new Gson();
+			File jsonFile = Paths.get(file).toFile();
+			JsonObject jsonObject = gson.fromJson(new FileReader(jsonFile), JsonObject.class);
+
+			return jsonObject;
+		}
 }
