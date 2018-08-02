@@ -1,7 +1,8 @@
 package suporte;
 
-import static suporte.Runner.getDriver;
 import static suporte.Runner.fecharDriver;
+import static suporte.Runner.getDriver;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -11,11 +12,6 @@ import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
-import suporte.Propriedades;
 
 public class Hooks {
 
@@ -34,6 +30,8 @@ public class Hooks {
 			fecharDriver();
 		}
 	}
+	
+	
 	
 
 }

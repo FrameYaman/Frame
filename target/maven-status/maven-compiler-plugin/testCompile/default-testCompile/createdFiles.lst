@@ -1,0 +1,13 @@
+page\ContatoPage.class
+page\MenuPage.class
+steps\Steps.class
+suporte\Hooks.class
+suporte\Propriedades$Browsers.class
+suporte\Propriedades$TipoExecucao.class
+page\HomePage.class
+suporte\Runner$1.class
+page\SolucoesPage.class
+test\ContatoTest.class
+suporte\Propriedades.class
+suporte\Runner.class
+suporte\Runner$2.class

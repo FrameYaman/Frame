@@ -1,12 +1,13 @@
 package suporte;
 
+import static suporte.Runner.getDriver;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-import static suporte.Runner.getDriver;
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
