@@ -29,9 +29,6 @@ public class Hooks {
 		if (Propriedades.FECHAR_BROWSER) {
 			fecharDriver();
 		}
-	}
-	
-	
-	
+	}	
 
 }

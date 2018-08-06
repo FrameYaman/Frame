@@ -3,10 +3,8 @@ package test;
 import org.junit.Test;
 
 import page.ContatoPage;
-import suporte.Hooks;
-//import suporte.Operations;
 
-public class ContatoTest extends Hooks{
+public class ContatoTest{
 	
 	ContatoPage page = new ContatoPage();
 	
