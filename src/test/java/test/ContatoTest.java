@@ -3,8 +3,9 @@ package test;
 import org.junit.Test;
 
 import page.ContatoPage;
+import suporte.Hooks;
 
-public class ContatoTest{
+public class ContatoTest extends Hooks{
 	
 	ContatoPage page = new ContatoPage();
 	

@@ -30,7 +30,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/bsh-2.0b4.jar"/>
 	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/bson-3.3.0.jar"/>
 	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/commons-codec-1.9.jar"/>
@@ -46,5 +45,6 @@
 	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/mongodb-driver-core-3.3.0.jar"/>
 	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/testng-6.9.10.jar"/>
 	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/extentreports-3.1.5.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

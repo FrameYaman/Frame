@@ -7,7 +7,7 @@ public class HomePage {
 	BaseDSL baseDSL = new BaseDSL();
 	MenuPage menu = new MenuPage();
 
-	/*********** INÍCIO NAVEGAÇÃO **********/
+	/*********** INICIO NAVEGACAO **********/
 	
 	public void inicia() {
 		baseDSL.url("http://www.yaman.com.br");

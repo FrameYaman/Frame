@@ -21,10 +21,10 @@ public class BaseDSL {
 	
 	
 
-	/******************** INTERÇÕES NAVEGADOR ********************/
+	/******************** INTERACOES NAVEGADOR ********************/
 
 	/**
-	 * Indicar a url para navegação Exemplo: url("http://www.exemplourl.com.br");
+	 * Indicar a url para navegacao Exemplo: url("http://www.exemplourl.com.br");
 	 * 
 	 * @author lucas.casanova
 	 * @param url
@@ -35,7 +35,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Executa rolagem da página. Exemplo: rolarPagina("window.scrollBy(0,650)");
+	 * Executa rolagem da pagina. Exemplo: rolarPagina("window.scrollBy(0,650)");
 	 * 
 	 * @author lucas.casanova
 	 */
@@ -44,7 +44,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Espera o tempo determinado por milisegundos para carregar. Utilizar números
+	 * Espera o tempo determinado por milisegundos para carregar. Utilizar numeros
 	 * inteiros. Exemplo: 'esperaCarregar(tempo)'
 	 * 
 	 * @param by
@@ -72,8 +72,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a máscara que existe no campo de preenchimento e escreve texto neste
-	 * mesmo campo. É necessário indicar o id referente. Exemplo:
+	 * Limpa a mascara que existe no campo de preenchimento e escreve texto neste
+	 * mesmo campo. e necessario indicar o id referente. Exemplo:
 	 * 'escreveTextoId("elementoId") , "texto")'
 	 * 
 	 * @author lucas.casanova
@@ -95,8 +95,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo e pressiona Enter. É necessário indicar a Tag Id referente.
+	 * Limpa a mascara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo e pressiona Enter. e necessario indicar a Tag Id referente.
 	 * Exemplo: 'escreveTextoIdEClicaEnter("elementoId") , "texto")'
 	 * 
 	 * @author lucas.casanova
@@ -107,8 +107,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo e pressiona Enter. É necessário indicar a Tag Name referente.
+	 * Limpa a mascara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo e pressiona Enter. e necessario indicar a Tag Name referente.
 	 * Exemplo: 'escreveTextoNameEClicaEnter("elementoName" , "texto")'
 	 * 
 	 * @author lucas.casanova
@@ -153,8 +153,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo. Este método chama comando 'ClassName'. Exemplo:
+	 * Limpa a mascara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo. Este metodo chama comando 'ClassName'. Exemplo:
 	 * 'escreverNaClasse("NomeDaClasse" , texto)'
 	 * 
 	 * @param nome_classe
@@ -165,8 +165,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Limpa a máscara que existe no campo de preenchimento, escreve texto neste
-	 * mesmo campo. Este método chama comando 'Id'. Exemplo: 'escreveId("Id" ,
+	 * Limpa a mascara que existe no campo de preenchimento, escreve texto neste
+	 * mesmo campo. Este metodo chama comando 'Id'. Exemplo: 'escreveId("Id" ,
 	 * texto)'
 	 * 
 	 * @author lucas.casanova
@@ -178,7 +178,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra na página da Web através da Tag Id e reserva por Tag encontrada.
+	 * Encontra na pagina da Web atraves da Tag Id e reserva por Tag encontrada.
 	 * Exemplo: 'obterValorCampoAttributeId("elementoId", "innerText")'
 	 * 
 	 * @author lucas.casanova
@@ -188,7 +188,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra na página da Web através da Tag Name e reserva por Tag encontrada.
+	 * Encontra na pagina da Web atraves da Tag Name e reserva por Tag encontrada.
 	 * Exemplo: 'obterValorCampoAttributeName("elementoName", "innerText")'
 	 * 
 	 * @author lucas.casanova
@@ -198,7 +198,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra na página da Web através da Classname e reserva por Tag encontrada.
+	 * Encontra na pagina da Web atraves da Classname e reserva por Tag encontrada.
 	 * Exemplo: 'obterValorCampoAttributeClassName("elementoClassName",
 	 * "innerText")'
 	 * 
@@ -209,7 +209,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Retorna texto do elemento através da Tag Id e reserva o texto encontrado.
+	 * Retorna texto do elemento atraves da Tag Id e reserva o texto encontrado.
 	 * Exemplo: 'obterCampoTextoId("elementoId")'
 	 * 
 	 * @author lucas.casanova
@@ -219,7 +219,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Retorna texto do elemento através da Tag Name e reserva o texto encontrado.
+	 * Retorna texto do elemento atraves da Tag Name e reserva o texto encontrado.
 	 * Exemplo: 'obterCampoTextoName("elementoName")'
 	 * 
 	 * @author lucas.casanova
@@ -229,7 +229,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Retorna texto do elemento através da Tag ClassName e reserva o texto
+	 * Retorna texto do elemento atraves da Tag ClassName e reserva o texto
 	 * encontrado. Exemplo: 'obterCampoTextoClassName("elementoId")'
 	 * 
 	 * @author lucas.casanova
@@ -239,7 +239,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Verifica se campo obrigatório foi preenchido corretamente. Exemplo:
+	 * Verifica se campo obrigatorio foi preenchido corretamente. Exemplo:
 	 * 'checarCampoObrigatorioId("texto" , "id")'
 	 * 
 	 * @author lucas.casanova
@@ -249,7 +249,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Verifica se campo obrigatório foi preenchido corretamente. Exemplo:
+	 * Verifica se campo obrigatorio foi preenchido corretamente. Exemplo:
 	 * 'checarCampoObrigatorioName("texto" , "name")'
 	 * 
 	 * @author lucas.casanova
@@ -259,7 +259,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Verifica se campo obrigatório foi preenchido corretamente. Exemplo:
+	 * Verifica se campo obrigatorio foi preenchido corretamente. Exemplo:
 	 * 'checarCampoObrigatorioClassName("texto" , "className")'
 	 * 
 	 * @author lucas.casanova
@@ -271,7 +271,7 @@ public class BaseDSL {
 	/******************** RADIO E CHECK ********************/
 
 	/**
-	 * Encontra elemento e confirma se está selecionado. Exemplo:
+	 * Encontra elemento e confirma se esta selecionado. Exemplo:
 	 * 'isElementoMarcadoId("Id")'
 	 * 
 	 * @author guilherme.teixeira
@@ -281,7 +281,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento e confirma se está selecionado. Exemplo:
+	 * Encontra elemento e confirma se esta selecionado. Exemplo:
 	 * 'isElementoMarcadoName("name")'
 	 * 
 	 * @author guilherme.teixeira
@@ -291,7 +291,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento e confirma se está selecionado. Exemplo:
+	 * Encontra elemento e confirma se esta selecionado. Exemplo:
 	 * 'isElementoMarcado("className")'
 	 * 
 	 * @author guilherme.teixeira
@@ -301,7 +301,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
+	 * Encontra campo Check, seleciona pressionando espaco para marcar. Exemplo:
 	 * 'isCheckMarcadoComEspacoId("id")'
 	 * 
 	 * @author guilherme.teixeira
@@ -311,7 +311,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
+	 * Encontra campo Check, seleciona pressionando espaco para marcar. Exemplo:
 	 * 'isCheckMarcadoComEspacoName("name")'
 	 * 
 	 * @author guilherme.teixeira
@@ -321,7 +321,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Check, seleciona pressionando Espaço para marcar. Exemplo:
+	 * Encontra campo Check, seleciona pressionando espaco para marcar. Exemplo:
 	 * 'isCheckMarcadoComEspacoClassName("className)'
 	 * 
 	 * @author guilherme.teixeira
@@ -369,7 +369,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Combo por Tag Id e retira a seleção do elemento deste Combo.
+	 * Encontra campo Combo por Tag Id e retira a selecao do elemento deste Combo.
 	 * Exemplo: 'deselecionarComboId("id" , "TextoDoCombo")'
 	 * 
 	 * @author guilherme.teixeira
@@ -381,7 +381,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Combo por Tag Name e retira a seleção do elemento deste Combo.
+	 * Encontra campo Combo por Tag Name e retira a selecao do elemento deste Combo.
 	 * Exemplo: 'deselecionarComboName("name" , "TextoDoCombo")'
 	 * 
 	 * @author guilherme.teixeira
@@ -393,7 +393,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra campo Combo por Tag ClassName e retira a seleção do elemento deste
+	 * Encontra campo Combo por Tag ClassName e retira a selecao do elemento deste
 	 * Combo. Exemplo: 'deselecionarComboClassName("className" , "TextoDoCombo")'
 	 * 
 	 * @author guilherme.teixeira
@@ -404,10 +404,10 @@ public class BaseDSL {
 		combo.deselectByVisibleText(valor);
 	}
 
-	/******************** BOTÃO ********************/
+	/******************** BOTAO ********************/
 
 	/**
-	 * Encontra elemento pela indicação solicitada e clica.
+	 * Encontra elemento pela indicacao solicitada e clica.
 	 * 
 	 * @author guilherme.teixeira
 	 */
@@ -416,7 +416,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento pela indicação solicitada e clica.
+	 * Encontra elemento pela indicacao solicitada e clica.
 	 * 
 	 * @author guilherme.teixeira
 	 */
@@ -425,7 +425,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento pela indicação solicitada e clica.
+	 * Encontra elemento pela indicacao solicitada e clica.
 	 * 
 	 * @author guilherme.teixeira
 	 */
@@ -434,7 +434,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento pela indicação solicitada e clica.
+	 * Encontra elemento pela indicacao solicitada e clica.
 	 * 
 	 * @author guilherme.teixeira
 	 */
@@ -443,7 +443,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento pela indicação solicitada e clica.
+	 * Encontra elemento pela indicacao solicitada e clica.
 	 * 
 	 * @param xpath
 	 */
@@ -454,8 +454,8 @@ public class BaseDSL {
 	/******************** TEXTOS ********************/
 
 	/**
-	 * Encontra elemento Text por indicação selecionada e reserva texto encontrado.
-	 * É necessário indicar a TAG referente. Exemplo: 'obterTextoId("id")'
+	 * Encontra elemento Text por indicacao selecionada e reserva texto encontrado.
+	 * e necessario indicar a TAG referente. Exemplo: 'obterTextoId("id")'
 	 * 
 	 * @author guilherme.teixeira
 	 */
@@ -464,8 +464,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento Text por indicação selecionada e reserva texto encontrado.
-	 * É necessário indicar a TAG referente. Exemplo: 'obterTextoName("name")'
+	 * Encontra elemento Text por indicacao selecionada e reserva texto encontrado.
+	 * e necessario indicar a TAG referente. Exemplo: 'obterTextoName("name")'
 	 * 
 	 * @author guilherme.teixeira
 	 */
@@ -474,8 +474,8 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Encontra elemento Text por indicação selecionada e reserva texto encontrado.
-	 * É necessário indicar a TAG referente. Exemplo:
+	 * Encontra elemento Text por indicacao selecionada e reserva texto encontrado.
+	 * e necessario indicar a TAG referente. Exemplo:
 	 * 'obterTextoClassName("className")'
 	 * 
 	 * @author guilherme.teixeira
@@ -487,7 +487,7 @@ public class BaseDSL {
 	/******************** ALERTS ********************/
 
 	/**
-	 * Desvia a atenção para um Alert obtém texto. Aceita Alert e retorna texto
+	 * Desvia a atencaopara um Alert obtem texto. Aceita Alert e retorna texto
 	 * deste Alert. Exemplo: 'alertaObterTextoEAceita()'
 	 * 
 	 * @author guilherme.teixeira
@@ -500,7 +500,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Desvia a atenção para um Alert obtém texto. Rejeita Alert e retorna texto
+	 * Desvia a atencaopara um Alert obtem texto. Rejeita Alert e retorna texto
 	 * deste Alert. Exemplo: 'alertaObterTextoENega()'
 	 * 
 	 * @author guilherme.teixeira
@@ -513,7 +513,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Desvia a atenção para um Alert escreve texto indicado e aceita Alert.
+	 * Desvia a atencaopara um Alert escreve texto indicado e aceita Alert.
 	 * Exemplo: 'alertaEscrever("Texto")'
 	 * 
 	 * @author guilherme.teixeira
@@ -527,7 +527,7 @@ public class BaseDSL {
 	/******************* FRAMES E JANELAS *******************/
 
 	/**
-	 * Desvia a atenção para um Frame por Tag indicada e entra. Exemplo:
+	 * Desvia a atencaopara um Frame por Tag indicada e entra. Exemplo:
 	 * 'entrarFrame("elemento")'
 	 * 
 	 * @author guilherme.teixeira
@@ -537,7 +537,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Sai do Frame e retorna para a página principal. Exemplo: 'SairFrame()'
+	 * Sai do Frame e retorna para a pagina principal. Exemplo: 'SairFrame()'
 	 * 
 	 * @param by
 	 * @param valor
@@ -548,7 +548,7 @@ public class BaseDSL {
 	}
 
 	/**
-	 * Desvia a atenção para uma janela por Id indicado. Exemplo:
+	 * Desvia a atencao para uma janela por Id indicado. Exemplo:
 	 * 'trocarJanela("elemento")'
 	 * 
 	 * @param by
@@ -562,7 +562,7 @@ public class BaseDSL {
 	/********* CNPJ, CPF, Pessoa, Empresa e E-mail ************/
 
 	/**
-	 * Gerador de CNPJ automático
+	 * Gerador de CNPJ automatico
 	 * 
 	 * @return numerogerado
 	 * @author joaofranco
@@ -593,7 +593,7 @@ public class BaseDSL {
 
 		digito1 = soma - valor;
 
-		// Primeiro resto da divisão por 11.
+		// Primeiro resto da divisao por 11.
 		resto = (digito1 % 11);
 
 		if (digito1 < 2) {
@@ -607,7 +607,7 @@ public class BaseDSL {
 		int valor2 = (soma2 / 11) * 11;
 		digito2 = soma2 - valor2;
 
-		// Primeiro resto da divisão por 11.
+		// Primeiro resto da divisao por 11.
 		resto = (digito2 % 11);
 
 		if (digito2 < 2) {
@@ -690,7 +690,7 @@ public class BaseDSL {
 		int valor = (soma / 11) * 11;
 		digito1 = soma - valor;
 
-		// Primeiro resto da divisão por 11.
+		// Primeiro resto da divisao por 11.
 		resto = (digito1 % 11);
 
 		if (digito1 < 2) {
@@ -703,7 +703,7 @@ public class BaseDSL {
 		int valor2 = (soma2 / 11) * 11;
 		digito2 = soma2 - valor2;
 
-		// Primeiro resto da divisão por 11.
+		// Primeiro resto da divisao por 11.
 		resto = (digito2 % 11);
 
 		if (digito2 < 2) {

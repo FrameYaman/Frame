@@ -8,7 +8,7 @@ public class ContatoPage {
 	BaseDSL baseDSL = new BaseDSL();
 	MenuPage menu = new MenuPage();
 
-	/*********** INÍCIO NAVEGAÇÃO **********/
+	/*********** INICIO NAVEGACAO **********/
 	
 	public void inicia() {
 		baseDSL.url("http://www.yaman.com.br");
@@ -29,7 +29,7 @@ public class ContatoPage {
 		baseDSL.escreveTextoName("your-message", mensagem);
 	}
 	
-	/*********** BOTÃO **********/
+	/*********** BOTAO **********/
 	
 	public void clicaBotaoEnviar() {
 		baseDSL.clicaElementoClassName("wpcf7-form-control wpcf7-submit");
