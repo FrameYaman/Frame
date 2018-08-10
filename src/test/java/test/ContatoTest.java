@@ -4,10 +4,12 @@ import org.junit.Test;
 
 import page.ContatoPage;
 import suporte.Hooks;
+import suporte.Report;
 
 public class ContatoTest extends Hooks{
 	
 	ContatoPage page = new ContatoPage();
+	Report report = new Report();
 	
 	@Test
 	public void testeEnvioContato() {
@@ -15,6 +17,7 @@ public class ContatoTest extends Hooks{
 		page.escreveSeuEmail("exemplo.email@email.com");
 		page.escreveAssunto("Yaman");
 		page.escreveSuaMensagem("#NAOIRRITEOCLIENTE");
+		report.Pdf("Teste Envio Contato");
 	}
 	@Test
 	public void testeEnvioContato22() {

@@ -30,21 +30,21 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/bsh-2.0b4.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/bson-3.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/commons-codec-1.9.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/freemarker-2.3.23.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/gson-2.8.0.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/httpclient-4.5.2.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/httpcore-4.4.4.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/httpmime-4.5.2.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/jcommander-1.48.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/jsoup-1.9.2.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/mongodb-driver-3.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/mongodb-driver-core-3.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/lib/testng-6.9.10.jar"/>
-	<classpathentry kind="lib" path="C:/extentreports-java-3.1.5/extentreports-3.1.5.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/jfreechart-1.0.19-experimental.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/jfreechart-1.0.19-swt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/jfreesvg-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/orsoncharts-1.4-eval-nofx.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/orsonpdf-1.6-eval.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/servlet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/swtgraphics2d.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/itext-2.1.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Downloads/itextpdf-5.5.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Downloads/json-20180130.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Downloads/layout-7.1.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
