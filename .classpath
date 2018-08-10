@@ -43,8 +43,6 @@
 	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/servlet.jar"/>
 	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/swtgraphics2d.jar"/>
 	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Desktop/lib/itext-2.1.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Downloads/itextpdf-5.5.13.jar"/>
 	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Downloads/json-20180130.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jaderson.macedo/Downloads/layout-7.1.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
